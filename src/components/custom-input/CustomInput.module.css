@@ -1,0 +1,23 @@
+.input {
+    background-color: white;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    height: 44px;
+    width: 268px;
+    padding: 14px 15px;
+    transition: border-color 0.15s ease-in-out;
+}
+.input:focus {
+    color: #212529;
+    background-color: #fff;
+    border: 2px solid var(--violet);
+    outline: 0;
+}
+.input:active {
+    border-color: var(--violet);
+}
+.input::placeholder {
+}
+.error {
+    color: red;
+}

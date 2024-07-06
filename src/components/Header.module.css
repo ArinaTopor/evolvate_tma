@@ -1,0 +1,14 @@
+.btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.header_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-items: center;
+}
+.header_wrapper div {
+    align-items: center;
+}

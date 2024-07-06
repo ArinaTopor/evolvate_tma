@@ -1,0 +1,34 @@
+import CustomInput from '../components/custom-input/CustomInput';
+import mascot from '../assets/Mascot.svg';
+import message from '../assets/signUpMessage.svg';
+import {
+    emailValidator,
+    phoneValidator,
+    required,
+} from '../hooks/useValidation';
+import styles from './SingUp.module.css';
+const SignUp = () => {
+    return (
+        <div className={styles.form_wrapper}>
+            <h1>Регистрация</h1>
+            <form>
+                <CustomInput
+                    placeholder='электронная почта'
+                    name='email'
+                    validators={[required, emailValidator]}
+                ></CustomInput>
+                <CustomInput
+                    placeholder='телефон'
+                    name='phone'
+                    validators={[required, phoneValidator]}
+                ></CustomInput>
+                <button className={styles.submit_btn}>Отправить</button>
+            </form>
+            <div className={styles.mascot_container}>
+                <img src={mascot}></img>
+                <img src={message}></img>
+            </div>
+        </div>
+    );
+};
+export default SignUp;
