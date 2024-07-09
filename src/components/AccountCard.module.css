@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    width: 330px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 8px 10px;
+    color: var(--main-blue);
+    margin-top: 32px;
+    align-items: center;
+    margin-right: 16px;
+}
+.photo_wrapper img {
+    z-index: -1;
+}
+.photo_wrapper span {
+    position: relative;
+    align-items: flex-end;
+    background-color: var(--red);
+    padding: 2px 8px;
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    border-radius: 20px;
+    right: 18px;
+}
+.info {
+    margin-left: 22px;
+}
+.info div {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.info p {
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: left;
+}

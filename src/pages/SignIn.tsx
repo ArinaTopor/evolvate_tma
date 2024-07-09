@@ -1,16 +1,16 @@
 import CustomInput from '../components/custom-input/CustomInput';
 import mascot from '../assets/Mascot.svg';
-import message from '../assets/signUpMessage.svg';
+import message from '../assets/authMess.svg';
 import {
     emailValidator,
     phoneValidator,
     required,
 } from '../hooks/useValidation';
 import styles from './SingUp.module.css';
-const SignUp = () => {
+const SignIn = () => {
     return (
         <div className={styles.form_wrapper}>
-            <h1>Регистрация</h1>
+            <h1>Авторизация</h1>
             <form>
                 <CustomInput
                     placeholder='электронная почта'
@@ -18,16 +18,12 @@ const SignUp = () => {
                     validators={[required, emailValidator]}
                 ></CustomInput>
                 <CustomInput
-                    placeholder='телефон'
-                    name='phone'
-                    validators={[required, phoneValidator]}
-                ></CustomInput>
-                <CustomInput
                     placeholder='пароль'
                     name='password'
-                    validators={[required]}
+                    type='password'
+                    validators={[required, phoneValidator]}
                 ></CustomInput>
-                <button className={styles.submit_btn}>Отправить</button>
+                <button className={styles.submit_btn}>отправить</button>
             </form>
             <div className={styles.mascot_container}>
                 <img src={mascot}></img>
@@ -36,4 +32,4 @@ const SignUp = () => {
         </div>
     );
 };
-export default SignUp;
+export default SignIn;

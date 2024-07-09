@@ -1,7 +1,6 @@
 #root {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 2rem;
+    /* max-width: 1280px; */
+    /* margin: 0 auto; */
     text-align: center;
 }
 
@@ -42,12 +41,14 @@
 }
 .container {
     margin: 0;
+    min-width: 320px;
     max-width: 375px;
+    min-height: 100vh;
     background-image: url(assets/bg.png);
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 640px;
-    max-height: 660px;
+    /* min-height: 640px;
+    max-height: 660px; */
     padding-left: 16px;
     padding-top: 16px;
 }

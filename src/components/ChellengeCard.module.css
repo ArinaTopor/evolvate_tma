@@ -1,0 +1,28 @@
+.card_wrapper {
+    width: 140px;
+    height: 140px;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: start;
+}
+.card_header {
+    display: flex;
+    align-items: start;
+    gap: 20px;
+}
+.card_header span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: #f4a100;
+    border-radius: 10px;
+    padding: 2px 6px;
+}
+.card_wrapper h3 {
+    margin: 0;
+    margin-top: 5px;
+    padding: 0;
+}
+.card_wrapper > p {
+    margin-top: 8px;
+}

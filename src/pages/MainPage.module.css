@@ -1,0 +1,27 @@
+.chellenge_wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 330px;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 20px;
+    background-color: white;
+}
+.chellenge_header {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+}
+.chellenge_header span {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.chellenge_content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+}

@@ -6,10 +6,12 @@ const CustomInput = ({
     placeholder,
     name,
     validators,
+    type,
 }: {
     placeholder: string;
     name: string;
     validators: Validator<string>[];
+    type?: string;
 }) => {
     const value = useInput('', validators);
     return (
@@ -21,6 +23,7 @@ const CustomInput = ({
                 value={value.value}
                 onChange={(e) => value.onChange(e)}
                 onBlur={value.onBlur}
+                type={type}
             ></input>
             {value.error && value.isDirty && (
                 <p className={styles.error}>{value.message}</p>
