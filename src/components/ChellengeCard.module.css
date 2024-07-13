@@ -4,11 +4,14 @@
     border-radius: 20px;
     padding: 20px;
     text-align: start;
+    cursor: pointer;
+    color: white;
 }
 .card_header {
     display: flex;
     align-items: start;
-    gap: 20px;
+    justify-content: space-between;
+    font-family: 'Manrope', sans-serif;
 }
 .card_header span {
     display: flex;

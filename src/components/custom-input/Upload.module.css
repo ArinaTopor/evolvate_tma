@@ -1,0 +1,49 @@
+.input_file {
+    position: relative;
+    display: inline-block;
+}
+.input_file span {
+    position: relative;
+    display: flex;
+    gap: 10px;
+    width: 330px;
+    justify-content: center;
+    cursor: pointer;
+    align-items: center;
+    color: var(--violet);
+    text-align: center;
+    border: 2px solid var(--violet);
+    border-radius: 10px;
+    background-color: transparent;
+    line-height: 22px;
+    height: 46px;
+    padding: 15px 40px;
+    transition: opacity 0.2s;
+}
+.input_file input[type='file'] {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    display: block;
+    width: 0;
+    height: 0;
+}
+
+/* Hover/active */
+.input_file:hover span {
+    opacity: 60%;
+}
+
+/* Disabled */
+.input_file input[type='file']:disabled + span {
+    background-color: #eee;
+}
+.file {
+    display: flex;
+    gap: 6px;
+    margin-top: 6px;
+    align-items: center;
+}
+.file > img {
+    cursor: pointer;
+}

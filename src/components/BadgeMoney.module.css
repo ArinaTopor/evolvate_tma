@@ -1,0 +1,16 @@
+.badge {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: #f4a100;
+    border-radius: 10px;
+    padding: 2px 6px;
+    height: 21px;
+    color: white;
+    font-weight: 700;
+    font-size: 0.8rem;
+}
+.badge_yellow {
+    background-color: transparent;
+    color: #f4a100;
+}

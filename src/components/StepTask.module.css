@@ -1,0 +1,36 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.step_container {
+    display: flex;
+    background-color: white;
+    border-radius: 5px;
+    text-align: start;
+    align-items: center;
+    padding: 0 12px;
+    justify-content: space-between;
+}
+.step_container > h4 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+.step_container > img {
+    cursor: pointer;
+}
+.form_send {
+    background-color: var(--pink);
+    border: none;
+    padding: 15px 40px;
+    border-radius: 10px;
+    width: 100%;
+    color: white;
+    text-transform: uppercase;
+}
+.form_send:hover {
+    opacity: 80%;
+}
+.show {
+    transform: rotate(-180deg);
+}

@@ -16,8 +16,7 @@
 .input:active {
     border-color: var(--violet);
 }
-.input::placeholder {
-}
+
 .error {
     color: red;
 }

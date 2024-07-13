@@ -1,0 +1,16 @@
+.dialog_container {
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    z-index: 100;
+    border: none;
+    min-width: 320px;
+    max-width: 390px;
+    min-height: 100vh;
+    background-color: var(--bg-card);
+}
+.dialog_container > div {
+    padding: 14px 20px;
+}

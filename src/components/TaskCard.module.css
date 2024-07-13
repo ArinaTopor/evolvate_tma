@@ -1,0 +1,22 @@
+.taskcard_container {
+    background-color: white;
+    height: 180px;
+    padding: 20px;
+    border-radius: 20px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.taskcard_container div {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.taskcard_container > p {
+    position: static;
+    color: var(--violet);
+    font-weight: 700;
+    line-height: 16px;
+    align-items: end;
+    margin-top: 10px;
+    margin-top: 5rem;
+}

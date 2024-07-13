@@ -1,0 +1,20 @@
+.task_container {
+    text-align: left;
+}
+.task_description {
+}
+.score {
+    display: flex;
+    gap: 8px;
+    margin: 24px 0;
+    align-items: center;
+}
+.score > p {
+    opacity: 40%;
+    font-size: 0.8rem;
+}
+.note {
+    opacity: 40%;
+    font-size: 0.8rem;
+    margin: 10px 0 20px 0;
+}

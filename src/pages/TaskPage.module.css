@@ -1,0 +1,9 @@
+.wrapper {
+    text-align: start;
+}
+.wrapper h2 {
+    margin-top: 30px;
+}
+.tasks_title {
+    color: var(--purpure) !important;
+}

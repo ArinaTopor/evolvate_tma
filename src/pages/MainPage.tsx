@@ -31,13 +31,13 @@ const MainPage = () => {
                         title='Конфликты'
                         cost={200}
                         countTask={145}
-                        category={2}
+                        category={3}
                     ></ChellengeCard>
                     <ChellengeCard
                         title='Баланс'
                         cost={200}
                         countTask={145}
-                        category={1}
+                        category={4}
                     ></ChellengeCard>
                 </div>
             </div>

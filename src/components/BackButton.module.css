@@ -1,0 +1,8 @@
+.back_button {
+    color: var(--blue);
+    border: none;
+    background-color: transparent;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 0;
+}
