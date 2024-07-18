@@ -1,18 +1,16 @@
-import AccountCard from '../components/AccountCard';
 import ChellengeCard from '../components/ChellengeCard';
 import listIco from '../assets/todo.svg';
 import styles from './MainPage.module.css';
 const MainPage = () => {
     return (
         <main>
-            <AccountCard />
             <div className={styles.chellenge_wrapper}>
                 <div className={styles.chellenge_header}>
                     <span>
                         <img src={listIco} width={20} height={20}></img>
                         <h2>Челленджи</h2>
                     </span>
-                    <a>Все челленджи</a>
+                    <a href='/tasks/Все'>Все челленджи</a>
                 </div>
                 <div className={styles.chellenge_content}>
                     <ChellengeCard

@@ -1,0 +1,40 @@
+.cart_container {
+    text-align: start;
+    margin-top: 30px;
+}
+.cart_container > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cart_content__wrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--light-purpure);
+    border-radius: 15px;
+    padding: 18px 12px;
+    margin-top: 20px;
+    width: 330px;
+    gap: 10px;
+}
+.cart_container > div > form > button {
+    margin-top: 46px;
+    background-color: var(--light-violet);
+    border-radius: 10px;
+    padding: 12px 58px;
+    color: #fff;
+    text-transform: lowercase;
+}
+.cart_notification {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    background-color: var(--light-purpure);
+    border-radius: 15px;
+    color: #000;
+    font-weight: 500;
+    width: 330px;
+    height: 160px;
+    margin-top: 20px;
+}

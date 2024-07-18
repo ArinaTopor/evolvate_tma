@@ -5,6 +5,7 @@
     border-radius: 20px;
     margin-top: 10px;
     cursor: pointer;
+    width: 330px;
 }
 .taskcard_container div {
     display: flex;

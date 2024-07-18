@@ -2,7 +2,6 @@ import { useParams } from 'react-router-dom';
 import BackButton from '../components/BackButton';
 import TaskCard from '../components/TaskCard';
 import styles from './TaskPage.module.css';
-import AccountCard from '../components/AccountCard';
 import { Category, Data } from '../consts/Data';
 
 const TaskPage = () => {
@@ -13,18 +12,19 @@ const TaskPage = () => {
         ) ?? 'all';
     return (
         <main className={styles.wrapper}>
-            <AccountCard />
             <h2>
                 Задания в категории <br />
                 <span className={styles.tasks_title}>{params.category}</span>
             </h2>
             <BackButton children='Назад к категориям' link='/'></BackButton>
-            {Data.map(
-                (task) =>
-                    task.tag_id.toString() === category && (
-                        <TaskCard key={task.id} task={task} />
-                    )
-            )}
+            {category === 'all'
+                ? Data.map((task) => <TaskCard key={task.id} task={task} />)
+                : Data.map(
+                      (task) =>
+                          task.tag_id.toString() === category && (
+                              <TaskCard key={task.id} task={task} />
+                          )
+                  )}
         </main>
     );
 };

@@ -3,11 +3,10 @@
     width: 330px;
     background-color: white;
     border-radius: 20px;
-    padding: 8px 10px;
+    padding: 10px 10px;
     color: var(--main-blue);
     margin-top: 32px;
     align-items: center;
-    margin-right: 16px;
 }
 .photo_wrapper img {
     z-index: -1;
@@ -30,6 +29,9 @@
     display: flex;
     align-items: center;
     gap: 5px;
+}
+.info > div {
+    margin-top: 15px;
 }
 .info p {
     font-size: 1.1rem;

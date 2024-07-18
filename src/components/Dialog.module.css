@@ -1,0 +1,24 @@
+.modal {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    overflow: hidden;
+    text-align: end;
+    padding: 20px;
+}
+.modal > img {
+    cursor: pointer;
+}
+.modal_content {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* overflow: hidden; */
+    text-align: start;
+}

@@ -1,0 +1,15 @@
+.bg {
+    min-width: 320px;
+    max-width: 390px;
+    min-height: 100vh;
+    background-color: var(--bg-auth);
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 16px;
+    margin: auto;
+}
+.bg_unauth {
+    background-image: url('../assets/bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
