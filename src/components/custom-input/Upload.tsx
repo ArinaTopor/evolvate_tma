@@ -16,7 +16,7 @@ const Upload = ({
     const removeFile = (indexI: number) => {
         if (fileList) {
             const currentFiles = fileList.filter(
-                (file, index) => index !== indexI
+                (_, index) => index !== indexI
             );
 
             setFileList(currentFiles);

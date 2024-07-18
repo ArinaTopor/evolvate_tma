@@ -1,0 +1,78 @@
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.chat {
+    position: relative;
+    text-align: center;
+    width: 200px;
+    height: 50px;
+}
+
+.chatBubble {
+    position: absolute;
+    display: flex;
+    top: 50%;
+    left: 61%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 10px;
+    transition: transform 1s, opacity 1s;
+    width: 185px;
+    height: 48px;
+    align-items: center;
+    border-radius: 20px;
+    text-align: start;
+    font-size: 0.9rem;
+    line-height: 12px;
+}
+.bubble:nth-child(1) {
+    margin-top: 213px;
+    margin-left: 82px;
+    margin-bottom: 18px;
+}
+.bubble:nth-child(2) {
+    margin-left: 138px;
+}
+.bubble:nth-child(3) {
+    margin-top: 18px;
+    margin-left: 117px;
+}
+.bubble {
+    display: flex;
+    align-items: center;
+    text-align: start;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 7px 15px;
+    width: 190px;
+    height: 50px;
+    font-size: 0.9rem;
+    line-height: 12px;
+}
+.fadeIn {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+
+.fadeOut {
+    opacity: 0;
+    transform: translate(-50%, -90%);
+}
+
+.animated {
+    animation-delay: 2s;
+    animation: slide-up 1s ease forwards;
+}
+
+@keyframes slide-up {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(50%);
+        opacity: 1;
+    }
+}
