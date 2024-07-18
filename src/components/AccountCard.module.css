@@ -7,6 +7,7 @@
     color: var(--main-blue);
     margin-top: 32px;
     align-items: center;
+    margin-bottom: 30px;
 }
 .photo_wrapper img {
     z-index: -1;

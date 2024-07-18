@@ -73,12 +73,15 @@ const ModalInfo = ({
                     <div className={styles.select_wrapper}>
                         <select name='variant'>
                             {options.map((opt) => (
-                                <option key={opt.value} value={opt.value}>
+                                <option
+                                    className='option'
+                                    key={opt.value}
+                                    value={opt.value}
+                                >
                                     {opt.title}
                                 </option>
                             ))}
                         </select>
-                        <div className={styles.select_arrow}></div>
                         <div className={styles.select_arrow}></div>
                     </div>
                     <div className={styles.footer}>

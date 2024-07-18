@@ -1,9 +1,25 @@
-.wrapper {
+.wrapper_task {
     text-align: start;
 }
 .wrapper h2 {
-    margin-top: 30px;
+    margin-top: 20px;
 }
 .tasks_title {
     color: var(--purpure) !important;
+}
+.filter {
+    display: flex;
+    gap: 5px;
+    margin-top: 20px;
+}
+.filter button {
+    padding: 6px 16px;
+    border-radius: 8px;
+    background-color: #fff;
+    font-weight: 700;
+    color: var(--violet);
+}
+.filter button:hover {
+    color: white;
+    background-color: var(--violet);
 }

@@ -27,9 +27,19 @@ const Cart = () => {
                     </form>
                 </div>
             ) : (
+                showNotification && (
+                    <div className={styles.cart_notification}>
+                        <p>
+                            Ваш заказ принят. <br /> С вами свяжется менеджер
+                        </p>
+                    </div>
+                )
+            )}
+            {!showNotification && addedItems.length === 0 && (
                 <div className={styles.cart_notification}>
                     <p>
-                        Ваш заказ принят. <br /> С вами свяжется менеджер
+                        В вашей корзине пока ничего нет. <br /> Добавьте первый
+                        товар!
                     </p>
                 </div>
             )}

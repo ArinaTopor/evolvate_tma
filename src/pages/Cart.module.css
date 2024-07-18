@@ -1,6 +1,8 @@
 .cart_container {
     text-align: start;
-    margin-top: 30px;
+}
+.cart_container > h2 {
+    margin-bottom: 20px;
 }
 .cart_container > div {
     display: flex;

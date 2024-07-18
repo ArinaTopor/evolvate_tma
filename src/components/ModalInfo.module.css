@@ -58,7 +58,8 @@
     color: #f4a100;
 }
 .select_wrapper {
-    width: 42px;
+    display: flex;
+    width: 50px;
     max-width: 150px;
     position: relative;
     height: 22px;
@@ -66,6 +67,8 @@
     background: #ececf9;
     border: none;
     border-radius: 5px;
+    align-items: center;
+    padding: 5px 6px;
 }
 /*
 .select_wrapper > select {
@@ -85,19 +88,13 @@
 .select_wrapper > select::-ms-expand {
     display: none;
 }
-
+    */
+/* 
 .select_arrow {
-    position: absolute;
-    z-index: -1;
-    border: 8px solid transparent;
+    border: 6px solid transparent;
     border-bottom: 0;
-    right: 11px;
 }
 .select_arrow:nth-child(2) {
     top: 15px;
     border-top-color: var(--blue);
-}
-.select_arrow:nth-child(3) {
-    top: 13px;
-    border-top-color: #fff;
 } */

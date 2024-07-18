@@ -82,23 +82,35 @@ textarea:focus {
 button {
     cursor: pointer;
 }
-/* select {
+select {
     appearance: none;
     display: grid;
     grid-template-areas: 'select';
-    width: 100%;
-    min-width: 15ch;
-    max-width: 30ch;
     border: none;
     border-radius: 0.25em;
     padding: 0.25em 0.5em;
     font-size: 1.25rem;
     cursor: pointer;
     line-height: 1.1;
-    background-color: #ececf9;
-    background-image: linear-gradient(to top, #f9f9f9, #fff 33%);
     align-items: center;
+    background-color: transparent;
+    background-image: url(assets/bxs_down-arrow.svg);
+    background-repeat: no-repeat;
+    background-position: right 0 top 50%, 0 0;
+    background-size: 0.65em auto;
+    border: none;
+    outline: none;
+    color: var(--blue);
 }
+option {
+    background-color: rgb(255, 255, 255, 0.3);
+    color: var(--main-blue);
+}
+select *.option {
+    background-color: #fff;
+    color: #000;
+}
+/*
 .select::after {
     content: '';
     width: 0.8em;

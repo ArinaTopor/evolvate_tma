@@ -15,10 +15,12 @@ const TaskDetailsPage = () => {
     return (
         <main>
             {task && (
-                <BackButton
-                    children='Назад к заданиям'
-                    link={`/tasks/${Category[task.tag_id]}`}
-                />
+                <div style={{ width: '100%', textAlign: 'start' }}>
+                    <BackButton
+                        children='Назад к заданиям'
+                        link={`/tasks/${Category[task.tag_id]}`}
+                    />
+                </div>
             )}
             {task !== undefined ? (
                 <div className={styles.task_container}>

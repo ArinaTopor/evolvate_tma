@@ -11,12 +11,17 @@ const TaskPage = () => {
             (key) => Category[key] === params.category
         ) ?? 'all';
     return (
-        <main className={styles.wrapper}>
+        <div className={styles.wrapper_task}>
             <h2>
                 Задания в категории <br />
                 <span className={styles.tasks_title}>{params.category}</span>
             </h2>
             <BackButton children='Назад к категориям' link='/'></BackButton>
+            <div className={styles.filter}>
+                <button>Все</button>
+                <button>Невыполненные</button>
+                <button>Завершенные</button>
+            </div>
             {category === 'all'
                 ? Data.map((task) => <TaskCard key={task.id} task={task} />)
                 : Data.map(
@@ -25,7 +30,7 @@ const TaskPage = () => {
                               <TaskCard key={task.id} task={task} />
                           )
                   )}
-        </main>
+        </div>
     );
 };
 export default TaskPage;

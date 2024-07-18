@@ -26,6 +26,7 @@ const CartItem = ({ product }: { product: Product }) => {
                 <img
                     src={remove}
                     width={12}
+                    style={{ cursor: 'pointer' }}
                     onClick={() => removeItem(product.id)}
                 />
             </div>
