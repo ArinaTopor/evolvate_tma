@@ -5,6 +5,8 @@ import mock from '../assets/term.png';
 import money from '../assets/yellowMoney.svg';
 import FlashMobDescription from './custom-input/Text';
 import { useCart } from '../util/CartContext';
+import { useState } from 'react';
+import Select from './custom-input/Select';
 const options = [
     {
         title: 'XS',
@@ -36,12 +38,13 @@ const ModalInfo = ({
     open: boolean;
     onOpen: (state: boolean) => void;
 }) => {
-    // const [varinat, setvariantValue] = useState('');
-    // const handleVariantSelect = (value: string) => {
-    //     setvariantValue(value);
-    // };
+    const [varinat, setvariantValue] = useState('');
+    const handleVariantSelect = (value: string) => {
+        setvariantValue(value);
+    };
     const { onAdd } = useCart();
-    // const selectedVariant = options.find((item) => item.value === varinat);
+    const selectedVariant =
+        options.find((item) => item.value === varinat) || null;
     const onAddHandler = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
@@ -70,20 +73,11 @@ const ModalInfo = ({
                     Выберите {product.variant_name.toLowerCase()}
                 </p>
                 <form onSubmit={(e) => onAddHandler(e)}>
-                    <div className={styles.select_wrapper}>
-                        <select name='variant'>
-                            {options.map((opt) => (
-                                <option
-                                    className='option'
-                                    key={opt.value}
-                                    value={opt.value}
-                                >
-                                    {opt.title}
-                                </option>
-                            ))}
-                        </select>
-                        <div className={styles.select_arrow}></div>
-                    </div>
+                    <Select
+                        options={options}
+                        onChange={handleVariantSelect}
+                        selected={selectedVariant}
+                    ></Select>
                     <div className={styles.footer}>
                         <button className={styles.shop_btn}>В КОРЗИНУ</button>
                         <div>

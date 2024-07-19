@@ -2,22 +2,20 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    height: 30px;
-    padding: 5px;
-    border: 1px;
+    height: 20px;
+    padding: 10px 5px;
     cursor: pointer;
-    font-family: 'SF Pro';
+    font-family: 'Manrope';
     font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 20px;
+    font-weight: 600;
     background-color: rgba(255, 255, 255, 1);
-    color: rgb(0, 0, 0, 0.5);
+    color: var(--violet);
 }
 
 .option[aria-selected='true'] {
     background-color: rgba(0, 0, 0, 0.05);
+    color: var(--blue);
 }
 .option:hover {
-    color: rgb(0, 0, 0, 1);
+    color: var(--blue);
 }

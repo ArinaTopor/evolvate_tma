@@ -1,46 +1,43 @@
 .selectWrapper {
     position: relative;
     border-radius: 12px;
+    margin-top: 5px;
 }
 
 .arrow {
-    /* right: 2px; */
-    /* top: 100%; */
+    margin-left: 4px;
+    top: 50%;
     transition: transform 0.2s ease-in-out, margin-top 0.2s ease-in-out;
-    margin-top: -12px;
 }
 
 .placeholder {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    height: 30px;
-    padding: 5px;
+    /* height: 30px; */
+    padding: 3px 6px;
     cursor: pointer;
     border: 1px;
-    font-family: 'SF Pro';
+    font-family: 'Manrope';
     font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 20px;
-    color: rgba(0, 0, 0, 0.6);
-    background: rgb(255, 255, 255);
+    font-weight: 600;
+    /* font-size: 14px; */
+    /* line-height: 20px; */
+    color: var(--blue);
+    background: #ececf9;
     box-sizing: border-box;
-    width: 50px;
+    width: 42px;
     max-width: 155px;
-    border-radius: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
 }
 
 .placeholder[data-status='default'] {
-    border: 1px solid rgba(0, 0, 0, 0.6);
-}
-
-.placeholder[data-status='invalid'] {
-    border: 1px solid rgba(255, 0, 0, 1);
+    border: none;
 }
 
 .placeholder[data-selected='true'] {
-    color: rgb(0, 0, 0);
+    color: var(--blue);
 }
 
 .selectWrapper[data-is-active='true'] .arrow {
@@ -49,26 +46,28 @@
 }
 
 .selectWrapper[data-is-active='true'] .placeholder {
-    border: 1px solid var(--main-blue);
+    border: none;
 }
 
 .selectWrapper:not([data-is-active='true'])
     .placeholder:not([data-status='invalid']):hover {
-    border: 1px solid rgba(0, 0, 0, 0.2);
+    border: none;
 }
 
 .select {
     display: grid;
     position: absolute;
     list-style: none;
-    width: 155px;
+    width: 43px;
+    max-width: 100px;
     margin: 0;
-    padding: 0;
+    padding: 2px;
     box-sizing: border-box;
     z-index: 10;
-    background-color: rgba(255, 255, 255, 0.8);
-    height: 100px;
-    overflow-y: scroll;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    color: bar(--blue);
 }
 
 .selectWrapper[data-mode='cells'] .select {
