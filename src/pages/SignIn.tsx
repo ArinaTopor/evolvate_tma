@@ -6,7 +6,7 @@ import {
     phoneValidator,
     required,
 } from '../hooks/useValidation';
-import styles from './SingUp.module.css';
+import styles from './SignUp/SingUp.module.css';
 const SignIn = () => {
     return (
         <div className={styles.form_wrapper}>

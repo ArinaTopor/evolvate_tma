@@ -4,16 +4,20 @@ import styles from './AccountCard.module.css';
 import cart from '../assets/cart.svg';
 import { useCart } from '../util/CartContext';
 import { useNavigate } from 'react-router-dom';
+import { useTelegram } from '../hooks/useTelegram';
 const AccountCard = () => {
     const { addedItems } = useCart();
     const navigate = useNavigate();
+    const { user } = useTelegram();
     return (
         <div className={styles.container}>
             <div className={styles.photo_wrapper}>
                 <img src={avatar}></img>
             </div>
             <div className={styles.info}>
-                <p>Владимир Константинов</p>
+                <p>
+                    {user?.first_name} {user?.last_name}
+                </p>
                 <div>
                     <div>
                         <img src={money}></img>

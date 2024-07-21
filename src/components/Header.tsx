@@ -3,11 +3,17 @@ import close from '../assets/close.svg';
 import logo from '../assets/logo.svg';
 import rollUp from '../assets/rollUp.svg';
 import more from '../assets/more.svg';
+import { useTelegram } from '../hooks/useTelegram';
 const Header = () => {
+    const { onClose } = useTelegram();
     return (
         <div className={styles.header_wrapper}>
             <div>
-                <button className={styles.btn} style={{ marginRight: '8px' }}>
+                <button
+                    onClick={onClose}
+                    className={styles.btn}
+                    style={{ marginRight: '8px' }}
+                >
                     <img src={close}></img>
                 </button>
                 <img src={logo}></img>

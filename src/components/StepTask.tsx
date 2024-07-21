@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Task, Type } from '../consts/Data';
 import Upload from './custom-input/Upload';
-import CollaboratorsInput from './custom-input/CollaboratorsInput';
+import CollaboratorsInput from './custom-input/CollaboratorsInput/CollaboratorsInput';
 import styles from './StepTask.module.css';
 import rollUp from '../assets/rollUp.svg';
 

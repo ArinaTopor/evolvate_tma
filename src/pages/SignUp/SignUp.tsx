@@ -1,13 +1,16 @@
-import CustomInput from '../components/custom-input/CustomInput';
-import mascot from '../assets/Mascot.svg';
-import message from '../assets/signUpMessage.svg';
+import CustomInput from '../../components/custom-input/CustomInput';
+import mascot from '../../assets/Mascot.svg';
+import message from '../../assets/signUpMessage.svg';
 import {
     emailValidator,
     phoneValidator,
     required,
-} from '../hooks/useValidation';
+} from '../../hooks/useValidation';
 import styles from './SingUp.module.css';
+import { getDevisions } from '../../api/Devision';
 const SignUp = () => {
+    const data = getDevisions();
+    console.log(data);
     return (
         <div className={styles.form_wrapper}>
             <h1>Регистрация</h1>

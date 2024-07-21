@@ -1,6 +1,6 @@
 import { KeyboardEventHandler, useState } from 'react';
 import styles from './CollaboratorsInput.module.css';
-import remove from '../../assets/close.svg';
+import remove from '../../../assets/close.svg';
 const CollaboratorsInput = ({
     collabList,
     setCollabList,

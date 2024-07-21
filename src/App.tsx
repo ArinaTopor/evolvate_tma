@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import SignUp from './pages/SignUp';
+import SignUp from './pages/SignUp/SignUp';
 import MainPage from './pages/MainPage';
 import SignIn from './pages/SignIn';
 import TaskPage from './pages/TaskPage';
@@ -9,17 +9,11 @@ import TaskDetailsPage from './pages/TaskDetailsPage';
 import Hello from './components/Hello';
 import { CartProvider } from './util/CartContext';
 import Layout from './pages/Layout';
-import Cart from './pages/Cart';
-const tg = window.Telegram.WebApp;
+import Cart from './pages/Cart/Cart';
+
 function App() {
-    const onClose = () => {
-        tg.close();
-    };
     return (
         <CartProvider>
-            <div>
-                <button onClick={onClose}>Закрыть</button>
-            </div>
             <BrowserRouter>
                 <Routes>
                     <Route element={<Layout isAuth={false} />}>
