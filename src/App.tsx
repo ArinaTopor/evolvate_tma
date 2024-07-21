@@ -10,10 +10,16 @@ import Hello from './components/Hello';
 import { CartProvider } from './util/CartContext';
 import Layout from './pages/Layout';
 import Cart from './pages/Cart';
-
+const tg = window.Telegram.WebApp;
 function App() {
+    const onClose = () => {
+        tg.close();
+    };
     return (
         <CartProvider>
+            <div>
+                <button onClick={onClose}>Закрыть</button>
+            </div>
             <BrowserRouter>
                 <Routes>
                     <Route element={<Layout isAuth={false} />}>
