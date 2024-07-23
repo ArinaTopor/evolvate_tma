@@ -1,12 +1,12 @@
-import { Product } from '../consts/ProductData';
+import { Product } from '../../consts/ProductData';
 import styles from './ModalInfo.module.css';
-import Dialog from './Dialog';
-import mock from '../assets/term.png';
-import money from '../assets/yellowMoney.svg';
-import FlashMobDescription from './custom-input/Text';
-import { useCart } from '../util/CartContext';
+import Dialog from '../Dialog/Dialog';
+import mock from '../../assets/term.png';
+import money from '../../assets/yellowMoney.svg';
+import FlashMobDescription from '../custom-input/Text';
+import { useCart } from '../../util/CartContext';
 import { useState } from 'react';
-import Select from './custom-input/Select';
+import Select from '../custom-input/Select';
 const options = [
     {
         title: 'XS',

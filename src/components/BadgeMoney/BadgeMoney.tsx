@@ -1,7 +1,7 @@
-import moneyWhite from '../assets/money.svg';
-import moneyYellow from '../assets/yellowMoney.svg';
+import moneyWhite from '../../assets/money.svg';
+import moneyYellow from '../../assets/yellowMoney.svg';
 import styles from './BadgeMoney.module.css';
-import { MoneyVariants } from '../consts/MoneyVariants';
+import { MoneyVariants } from '../../consts/MoneyVariants';
 const BadgeMoney = ({
     text,
     variant,

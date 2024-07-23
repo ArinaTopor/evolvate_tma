@@ -1,5 +1,5 @@
-import ChellengeCard from '../components/ChellengeCard';
-import listIco from '../assets/todo.svg';
+import ChellengeCard from '../../components/ChellengeCard/ChellengeCard';
+import listIco from '../../assets/todo.svg';
 import styles from './MainPage.module.css';
 const MainPage = () => {
     return (

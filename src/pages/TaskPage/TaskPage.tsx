@@ -1,8 +1,8 @@
 import { useParams } from 'react-router-dom';
-import BackButton from '../components/BackButton';
-import TaskCard from '../components/TaskCard';
+import BackButton from '../../components/BackButton/BackButton';
+import TaskCard from '../../components/TaskCard/TaskCard';
 import styles from './TaskPage.module.css';
-import { Category, Data } from '../consts/Data';
+import { Category, Data } from '../../consts/Data';
 
 const TaskPage = () => {
     const params = useParams();

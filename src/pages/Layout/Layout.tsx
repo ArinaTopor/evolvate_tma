@@ -1,9 +1,9 @@
-import AccountCard from '../components/AccountCard';
+import AccountCard from '../../components/AccountCard/AccountCard';
 import { Outlet } from 'react-router-dom';
-import Header from '../components/Header';
+import Header from '../../components/Header/Header';
 import styles from './Layout.module.css';
 import { useEffect, useState } from 'react';
-import qr from '../assets/qr_bot.jpg';
+import qr from '../../assets/qr_bot.jpg';
 
 const Layout = ({ isAuth }: { isAuth: boolean }) => {
     const [isPhone, setIsPhone] = useState(true);
@@ -15,7 +15,7 @@ const Layout = ({ isAuth }: { isAuth: boolean }) => {
         ) {
             setIsPhone(true);
         } else {
-            setIsPhone(false);
+            setIsPhone(true);
         }
     }, []);
     return isPhone ? (

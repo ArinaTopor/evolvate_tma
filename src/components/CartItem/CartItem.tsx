@@ -1,10 +1,10 @@
-import mock from '../assets/term.png';
-import remove from '../assets/close.svg';
-import { MoneyVariants } from '../consts/MoneyVariants';
-import { Product } from '../consts/ProductData';
-import BadgeMoney from './BadgeMoney';
+import mock from '../../assets/term.png';
+import remove from '../../assets/close.svg';
+import { MoneyVariants } from '../../consts/MoneyVariants';
+import { Product } from '../../consts/ProductData';
+import BadgeMoney from '../BadgeMoney/BadgeMoney';
 import styles from './CartItem.module.css';
-import { useCart } from '../util/CartContext';
+import { useCart } from '../../util/CartContext';
 const CartItem = ({ product }: { product: Product }) => {
     const { removeItem } = useCart();
     return (

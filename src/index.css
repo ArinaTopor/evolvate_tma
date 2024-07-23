@@ -79,3 +79,11 @@ button {
     border: none;
     cursor: pointer;
 }
+@media (min-width: 560px) {
+    body {
+        margin: 0;
+        place-items: center;
+        width: 100vw;
+        min-height: 100vh;
+    }
+}

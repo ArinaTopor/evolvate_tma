@@ -1,10 +1,10 @@
-import { MoneyVariants } from '../consts/MoneyVariants';
-import { Product } from '../consts/ProductData';
-import BadgeMoney from './BadgeMoney';
-import mock from '../assets/term.png';
+import { MoneyVariants } from '../../consts/MoneyVariants';
+import { Product } from '../../consts/ProductData';
+import BadgeMoney from '../BadgeMoney/BadgeMoney';
+import mock from '../../assets/term.png';
 import styles from './ProductCard.module.css';
 import { useState } from 'react';
-import ModalInfo from './ModalInfo';
+import ModalInfo from '../ModalInfoProduct/ModalInfo';
 const ProductCard = ({ product }: { product: Product }) => {
     const [open, onOpen] = useState(false);
     return (

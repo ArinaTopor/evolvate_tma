@@ -1,10 +1,10 @@
-import { MoneyVariants } from '../consts/MoneyVariants';
-import BadgeMoney from './BadgeMoney';
+import { MoneyVariants } from '../../consts/MoneyVariants';
+import BadgeMoney from '../BadgeMoney/BadgeMoney';
 import styles from './TaskCard.module.css';
-import camera from '../assets/camera.svg';
-import text from '../assets/write.svg';
-import video from '../assets/video.svg';
-import { Category, Task, Type } from '../consts/Data';
+import camera from '../../assets/camera.svg';
+import text from '../../assets/write.svg';
+import video from '../../assets/video.svg';
+import { Category, Task, Type } from '../../consts/Data';
 import { useNavigate } from 'react-router-dom';
 
 const TaskCard = ({ task }: { task: Task }) => {

@@ -1,9 +1,9 @@
 import styles from './ChellengeCard.module.css';
-import { TagColor } from '../consts/TagColor';
-import camera from '../assets/camera.svg';
+import { TagColor } from '../../consts/TagColor';
+import camera from '../../assets/camera.svg';
 import { useNavigate } from 'react-router-dom';
-import BadgeMoney from './BadgeMoney';
-import { MoneyVariants } from '../consts/MoneyVariants';
+import BadgeMoney from '../BadgeMoney/BadgeMoney';
+import { MoneyVariants } from '../../consts/MoneyVariants';
 const ChellengeCard = ({
     title,
     cost,

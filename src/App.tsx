@@ -1,14 +1,14 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import SignUp from './pages/SignUp/SignUp';
-import MainPage from './pages/MainPage';
+import MainPage from './pages/ChellengePage/MainPage';
 import SignIn from './pages/SignIn';
-import TaskPage from './pages/TaskPage';
-import Shop from './pages/Shop';
-import TaskDetailsPage from './pages/TaskDetailsPage';
+import TaskPage from './pages/TaskPage/TaskPage';
+import Shop from './pages/Shop/Shop';
+import TaskDetailsPage from './pages/TaskDetails/TaskDetailsPage';
 import Hello from './components/Hello';
 import { CartProvider } from './util/CartContext';
-import Layout from './pages/Layout';
+import Layout from './pages/Layout/Layout';
 import Cart from './pages/Cart/Cart';
 
 function App() {

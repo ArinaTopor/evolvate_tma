@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import BackButton from '../../components/BackButton';
-import CartItem from '../../components/CartItem';
+import BackButton from '../../components/BackButton/BackButton';
+import CartItem from '../../components/CartItem/CartItem';
 import { useCart } from '../../util/CartContext';
 import styles from './Cart.module.css';
 

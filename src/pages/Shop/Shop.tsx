@@ -1,6 +1,6 @@
-import BackButton from '../components/BackButton';
-import ProductCard from '../components/ProductCard';
-import { Products } from '../consts/ProductData';
+import BackButton from '../../components/BackButton/BackButton';
+import ProductCard from '../../components/ProductCard/ProductCard';
+import { Products } from '../../consts/ProductData';
 import styles from './Shop.module.css';
 const Shop = () => {
     return (

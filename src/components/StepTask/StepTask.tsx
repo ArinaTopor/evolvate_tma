@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Task, Type } from '../consts/Data';
-import Upload from './custom-input/Upload';
-import CollaboratorsInput from './custom-input/CollaboratorsInput/CollaboratorsInput';
+import { Task, Type } from '../../consts/Data';
+import Upload from '../custom-input/Upload';
+import CollaboratorsInput from '../custom-input/CollaboratorsInput/CollaboratorsInput';
 import styles from './StepTask.module.css';
-import rollUp from '../assets/rollUp.svg';
+import rollUp from '../../assets/rollUp.svg';
 
 const StepsTask = ({ task }: { task: Task }) => {
     const [visibleUpload, setVisibleUpload] = useState<boolean>(false);

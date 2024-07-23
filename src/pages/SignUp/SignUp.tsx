@@ -7,7 +7,10 @@ import {
     required,
 } from '../../hooks/useValidation';
 import styles from './SingUp.module.css';
+import { getDevisions } from '../../api/Devision';
 const SignUp = () => {
+    const data = getDevisions();
+    data.then((data) => console.log(data));
     return (
         <div className={styles.form_wrapper}>
             <h1>Регистрация</h1>

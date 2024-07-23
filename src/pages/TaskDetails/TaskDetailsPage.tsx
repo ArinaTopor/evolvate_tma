@@ -1,11 +1,11 @@
 import { useParams } from 'react-router-dom';
-import { Category, Data, Task } from '../consts/Data';
+import { Category, Data, Task } from '../../consts/Data';
 import styles from './TaskDetailsPage.module.css';
-import BadgeMoney from '../components/BadgeMoney';
-import { MoneyVariants } from '../consts/MoneyVariants';
-import StepsTask from '../components/StepTask';
-import FlashMobDescription from '../components/custom-input/Text';
-import BackButton from '../components/BackButton';
+import BadgeMoney from '../../components/BadgeMoney/BadgeMoney';
+import { MoneyVariants } from '../../consts/MoneyVariants';
+import StepsTask from '../../components/StepTask/StepTask';
+import FlashMobDescription from '../../components/custom-input/Text';
+import BackButton from '../../components/BackButton/BackButton';
 
 const TaskDetailsPage = () => {
     const params = useParams();

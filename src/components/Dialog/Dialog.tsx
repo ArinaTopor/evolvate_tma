@@ -1,5 +1,5 @@
 import styles from './Dialog.module.css';
-import close from '../assets/modalClose.svg';
+import close from '../../assets/modalClose.svg';
 
 const Dialog = ({
     open,

@@ -1,9 +1,9 @@
 import styles from './Header.module.css';
-import close from '../assets/close.svg';
-import logo from '../assets/logo.svg';
-import rollUp from '../assets/rollUp.svg';
-import more from '../assets/more.svg';
-import { useTelegram } from '../hooks/useTelegram';
+import close from '../../assets/close.svg';
+import logo from '../../assets/logo.svg';
+import rollUp from '../../assets/rollUp.svg';
+import more from '../../assets/more.svg';
+import { useTelegram } from '../../hooks/useTelegram';
 const Header = () => {
     const { onClose } = useTelegram();
     return (

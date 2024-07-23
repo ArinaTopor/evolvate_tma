@@ -1,10 +1,10 @@
-import money from '../assets/yellowMoney.svg';
-import avatar from '../assets/defaulPhoto.png';
+import money from '../../assets/yellowMoney.svg';
+import avatar from '../../assets/defaulPhoto.png';
 import styles from './AccountCard.module.css';
-import cart from '../assets/cart.svg';
-import { useCart } from '../util/CartContext';
+import cart from '../../assets/cart.svg';
+import { useCart } from '../../util/CartContext';
 import { useNavigate } from 'react-router-dom';
-import { useTelegram } from '../hooks/useTelegram';
+import { useTelegram } from '../../hooks/useTelegram';
 const AccountCard = () => {
     const { addedItems } = useCart();
     const navigate = useNavigate();
