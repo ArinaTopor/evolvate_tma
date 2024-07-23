@@ -16,6 +16,10 @@
     background-color: var(--violet);
     align-items: center;
 }
+.submit_btn:disabled {
+    background-color: var(--violet);
+    cursor: no-drop;
+}
 .form_wrapper {
     display: block;
 }

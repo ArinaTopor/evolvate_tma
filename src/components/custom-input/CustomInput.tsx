@@ -7,26 +7,30 @@ const CustomInput = ({
     name,
     validators,
     type,
+    value,
+    setValue,
 }: {
     placeholder: string;
     name: string;
     validators: Validator<string>[];
     type?: string;
+    value: string;
+    setValue: (value: string) => void;
 }) => {
-    const value = useInput('', validators);
+    const input = useInput(value, setValue, validators);
     return (
         <React.Fragment>
             <input
                 className={styles.input}
                 name={name}
                 placeholder={placeholder}
-                value={value.value}
-                onChange={(e) => value.onChange(e)}
-                onBlur={value.onBlur}
+                value={value}
+                onChange={(e) => input.onChange(e)}
+                onBlur={input.onBlur}
                 type={type}
             ></input>
-            {value.error && value.isDirty && (
-                <p className={styles.error}>{value.message}</p>
+            {input.error && input.isDirty && (
+                <p className={styles.error}>{input.message}</p>
             )}
         </React.Fragment>
     );

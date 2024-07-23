@@ -20,7 +20,7 @@ export const required: Validator<string> = async (
     value,
     message = 'Обязательное поле'
 ) => {
-    return value ? null : message;
+    return value && value.length > 0 ? null : message;
 };
 
 export const useValidation = <T>(value: T, validators: Validator<T>[]) => {

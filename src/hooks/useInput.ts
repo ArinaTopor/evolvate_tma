@@ -2,10 +2,11 @@ import { useState } from 'react';
 import { useValidation, Validator } from './useValidation';
 
 export const useInput = (
-    initialValue: string,
+    value: string,
+    setValue: (value: string) => void,
     validators: Validator<string>[]
 ) => {
-    const [value, setValue] = useState(initialValue);
+    // const [value, setValue] = useState(initialValue);
     const [isDirty, setIsDirty] = useState(false);
     const valid = useValidation(value, validators);
     const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -15,7 +16,7 @@ export const useInput = (
         setIsDirty(true);
     };
     return {
-        value,
+        // value,
         onChange,
         onBlur,
         isDirty,

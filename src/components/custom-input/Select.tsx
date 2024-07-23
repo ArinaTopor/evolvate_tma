@@ -11,6 +11,10 @@ type SelectProps = {
     status?: 'default' | 'invalid';
     onChange?: (selected: OptionT['value']) => void;
     onClose?: () => void;
+    width: string;
+    height?: string;
+    radius?: string;
+    padding?: string;
 };
 
 const Select = (props: SelectProps) => {
@@ -22,6 +26,10 @@ const Select = (props: SelectProps) => {
         selected,
         onChange,
         onClose,
+        width,
+        height,
+        radius = '5px',
+        padding,
     } = props;
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const rootRef = useRef<HTMLDivElement>(null);
@@ -83,12 +91,22 @@ const Select = (props: SelectProps) => {
                 role='button'
                 tabIndex={0}
                 ref={placeholderRef}
+                style={{
+                    width: width,
+                    height: height,
+                    borderRadius: radius,
+                    padding: padding,
+                }}
             >
                 {selected?.title || placeholder}
                 <img src={arrowDown} className={styles.arrow} />
             </div>
             {isOpen && (
-                <ul className={styles.select} data-testid='selectDropdown'>
+                <ul
+                    className={styles.select}
+                    data-testid='selectDropdown'
+                    style={{ width: width }}
+                >
                     {options.map((option) => (
                         <Option
                             key={option.value}

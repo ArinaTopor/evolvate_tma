@@ -1,7 +1,7 @@
 .selectWrapper {
     position: relative;
     border-radius: 12px;
-    margin-top: 5px;
+    /* margin-top: 5px; */
 }
 
 .arrow {
@@ -26,8 +26,8 @@
     color: var(--blue);
     background: #ececf9;
     box-sizing: border-box;
-    width: 42px;
-    max-width: 155px;
+    /* min-width: 42px;*/
+    max-width: 300px;
     border-radius: 5px;
     margin-bottom: 5px;
 }
@@ -58,8 +58,9 @@
     display: grid;
     position: absolute;
     list-style: none;
-    width: 43px;
-    max-width: 100px;
+    /* width: 43px; */
+    max-width: 300px;
+    max-height: 100px;
     margin: 0;
     padding: 2px;
     box-sizing: border-box;
@@ -67,7 +68,8 @@
     background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
-    color: bar(--blue);
+    color: var(--blue);
+    overflow-y: scroll;
 }
 
 .selectWrapper[data-mode='cells'] .select {

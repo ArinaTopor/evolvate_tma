@@ -77,6 +77,8 @@ const ModalInfo = ({
                         options={options}
                         onChange={handleVariantSelect}
                         selected={selectedVariant}
+                        width='43px'
+                        placeholder='Выберите департамент'
                     ></Select>
                     <div className={styles.footer}>
                         <button className={styles.shop_btn}>В КОРЗИНУ</button>
