@@ -1,10 +1,10 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
-import { Product } from '../consts/ProductData'; // Импортируйте тип Product
+import { Product } from './Product';
 
 interface CartContextType {
     addedItems: Product[];
     onAdd: (product: Product) => void;
-    removeItem: (id: string) => void;
+    removeItem: (id: number) => void;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -26,7 +26,7 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
         }
         setAddedItems(newItems);
     };
-    const removeItem = (id: string) => {
+    const removeItem = (id: number) => {
         let newItems: Product[] = [];
         newItems = addedItems.filter((item) => item.id !== id);
         setAddedItems(newItems);

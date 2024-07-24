@@ -1,9 +1,14 @@
-import { Division } from '../api/Division';
 import { OptionT } from '../util/OptionType';
-
-export const transformDataForSelect = (data: Division[]): OptionT[] => {
+type Extractor<T> = (item: T) => string;
+type HasId = {
+    id: string | number;
+};
+export const transformDataForSelect = <T extends HasId>(
+    data: T[],
+    titleExtractor: Extractor<T>
+): OptionT[] => {
     return data.map((item) => ({
         value: item.id.toString(),
-        title: item.name,
+        title: titleExtractor(item),
     }));
 };

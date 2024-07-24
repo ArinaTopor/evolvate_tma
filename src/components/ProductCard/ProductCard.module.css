@@ -37,3 +37,6 @@
     color: var(--pink);
     font-weight: 700;
 }
+.product_name {
+    width: 280px;
+}

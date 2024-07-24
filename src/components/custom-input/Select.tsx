@@ -11,7 +11,7 @@ type SelectProps = {
     status?: 'default' | 'invalid';
     onChange?: (selected: OptionT['value']) => void;
     onClose?: () => void;
-    width: string;
+    width?: string;
     height?: string;
     radius?: string;
     padding?: string;

@@ -1,34 +1,13 @@
-import { Product } from '../../consts/ProductData';
 import styles from './ModalInfo.module.css';
 import Dialog from '../Dialog/Dialog';
-import mock from '../../assets/term.png';
 import money from '../../assets/yellowMoney.svg';
 import FlashMobDescription from '../custom-input/Text';
 import { useCart } from '../../util/CartContext';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Select from '../custom-input/Select';
-const options = [
-    {
-        title: 'XS',
-        value: '01',
-    },
-    {
-        title: 'S',
-        value: '02',
-    },
-    {
-        title: 'M',
-        value: '03',
-    },
-    {
-        title: 'L',
-        value: '04',
-    },
-    {
-        title: 'XL',
-        value: '05',
-    },
-];
+import { Product } from '../../util/Product';
+import { transformDataForSelect } from '../../helpFunc/transformToSelect';
+import { getImage } from '../../helpFunc/getImage';
 const ModalInfo = ({
     product,
     open,
@@ -42,9 +21,29 @@ const ModalInfo = ({
     const handleVariantSelect = (value: string) => {
         setvariantValue(value);
     };
+    const transformVariant = transformDataForSelect(
+        product.variant,
+        (item) => item.value
+    );
+
+    const [imageURL, setImageURL] = useState('');
+
+    useEffect(() => {
+        const fetchImage = async () => {
+            const url = await getImage(product.image[0].image);
+            if (url) {
+                setImageURL(url);
+            }
+        };
+
+        fetchImage();
+    }, [product.image[0].image]);
+
     const { onAdd } = useCart();
     const selectedVariant =
-        options.find((item) => item.value === varinat) || null;
+        transformVariant.find((item) => item.value === varinat) ||
+        transformVariant[0] ||
+        null;
     const onAddHandler = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
@@ -66,7 +65,7 @@ const ModalInfo = ({
                     Осталось: {product.balance} шт.
                 </p>
                 <div className={styles.product_image}>
-                    <img src={mock} />
+                    <img src={imageURL} alt='product' width={200} />
                 </div>
                 <FlashMobDescription>{product.description}</FlashMobDescription>
                 <p className={styles.product_select}>
@@ -74,11 +73,14 @@ const ModalInfo = ({
                 </p>
                 <form onSubmit={(e) => onAddHandler(e)}>
                     <Select
-                        options={options}
+                        options={transformVariant}
                         onChange={handleVariantSelect}
                         selected={selectedVariant}
-                        width='43px'
-                        placeholder='Выберите департамент'
+                        width={
+                            product.variant_name.toLowerCase() === 'размер'
+                                ? '43px'
+                                : '180px'
+                        }
                     ></Select>
                     <div className={styles.footer}>
                         <button className={styles.shop_btn}>В КОРЗИНУ</button>

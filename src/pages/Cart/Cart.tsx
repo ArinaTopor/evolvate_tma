@@ -14,7 +14,7 @@ const Cart = () => {
     return (
         <div className={styles.cart_container}>
             <h2>Корзина</h2>
-            <BackButton children='Назад' link='/shop' />
+            <BackButton children='В магазин' link='/shop' />
             {!showNotification && addedItems.length > 0 ? (
                 <div>
                     <div className={styles.cart_content__wrapper}>

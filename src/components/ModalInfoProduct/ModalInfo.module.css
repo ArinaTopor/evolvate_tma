@@ -1,24 +1,14 @@
-.dialog_container {
-    height: 100vh;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    border: none;
-    min-width: 320px;
-    max-width: 390px;
-    min-height: 100vh;
-    background-color: var(--bg-card);
-}
-.dialog_container > div {
-    padding: 14px 20px;
+.product_container {
+    height: 800px;
 }
 .balance {
     opacity: 60%;
     font-size: 0.8rem;
 }
 .product_image {
-    border: 1px solid var(--bg-card);
+    display: flex;
+    justify-content: center;
+    border: 1px solid rgba(239, 239, 239, 1);
     border-radius: 15px;
     width: 290px;
     margin: 5px 0;
