@@ -12,14 +12,19 @@
     gap: 5px;
     margin-top: 20px;
 }
-.filter button {
+
+.filter_btn {
     padding: 6px 16px;
     border-radius: 8px;
     background-color: #fff;
     font-weight: 700;
     color: var(--violet);
 }
-.filter button:hover {
+.filter_btn:hover {
+    color: white;
+    background-color: var(--violet);
+}
+.active {
     color: white;
     background-color: var(--violet);
 }

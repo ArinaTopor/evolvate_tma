@@ -1,24 +1,26 @@
 import ChellengeCard from '../../components/ChellengeCard/ChellengeCard';
 import listIco from '../../assets/todo.svg';
 import styles from './MainPage.module.css';
-import { getAllTags, TaskTag } from '../../api/api.task';
+import { getAllTags, getCountTagTasks } from '../../api/api.task';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { TagCount, TaskTag } from '../../util/Task';
 const MainPage = () => {
-    const [chellenges, setChellenges] = useState<TaskTag[]>([]);
+    const [challenges, setChallenges] = useState<TaskTag[]>([]);
+    const [count, setCount] = useState<TagCount[]>([]);
     const navigate = useNavigate();
     useEffect(() => {
-        const fetchChellenges = async () => {
+        const fetchChallenges = async () => {
             try {
                 const data = await getAllTags();
-                setChellenges(data);
-                console.log(data);
+                const counts = await getCountTagTasks();
+                setChallenges(data);
+                setCount(counts);
             } catch (error) {
                 console.error('Error fetching user profile:', error);
             }
         };
-
-        fetchChellenges();
+        fetchChallenges();
     }, []);
     const handleNavigate = (path: string) => {
         navigate(path);
@@ -39,13 +41,17 @@ const MainPage = () => {
                     </button>
                 </div>
                 <div className={styles.chellenge_content}>
-                    {chellenges.map((chellenge) => (
+                    {challenges.map((challenge) => (
                         <ChellengeCard
-                            key={chellenge.id}
-                            title={chellenge.name}
+                            key={challenge.id}
+                            title={challenge.name}
                             cost={200}
-                            countTask={200}
-                            category={chellenge.id}
+                            countTask={
+                                count.find((c) => (c.id = challenge.id))
+                                    ?.count || 0
+                            }
+                            category={challenge.id}
+                            image={challenge.image}
                         ></ChellengeCard>
                     ))}
                 </div>

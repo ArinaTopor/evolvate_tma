@@ -4,15 +4,17 @@ import message from '../../assets/authMess.svg';
 import { emailValidator, required } from '../../hooks/useValidation';
 import styles from './Auth.module.css';
 import { useContext, useState } from 'react';
-import { AuthData, signIn } from '../../api/api.auth';
+import { AuthData } from '../../api/api.auth';
 import Header from '../../components/Header/Header';
 import AuthContext from '../../util/AuthContext';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../context/UserAuth';
 const SignIn = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [error, setError] = useState<string | null>(null);
+    const [myError, setError] = useState<string | null>(null);
     const { setAuth } = useContext(AuthContext);
+    const { login, error } = useAuth();
     const navigate = useNavigate();
     const logIn = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -21,8 +23,8 @@ const SignIn = () => {
             password: password,
         };
         setError('');
-        const response = await signIn(authData);
-        if (!response) {
+        login(authData);
+        if (error) {
             setError('Неверный email или пароль. Попробуйте снова.');
         } else {
             setAuth(true);
@@ -50,7 +52,7 @@ const SignIn = () => {
                         value={password}
                         setValue={setPassword}
                     ></CustomInput>
-                    {error && <p className={styles.form_error}>{error}</p>}
+                    {error && <p className={styles.form_error}>{myError}</p>}
                     <button
                         className={styles.submit_btn}
                         disabled={email.length === 0 || password.length === 0}

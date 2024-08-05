@@ -20,12 +20,22 @@
     gap: 10px;
 }
 .cart_container > div > form > button {
-    margin-top: 46px;
+    margin-top: 38px;
+    margin-bottom: 24px;
     background-color: var(--light-violet);
     border-radius: 10px;
     padding: 12px 58px;
     color: #fff;
     text-transform: lowercase;
+}
+.cart_container > div > form > button:disabled {
+    cursor: no-drop;
+    background-color: var(--violet);
+}
+.cart_balance {
+    padding-top: 8px;
+    font-size: 1em;
+    opacity: 0.6;
 }
 .cart_notification {
     display: flex;

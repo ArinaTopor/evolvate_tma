@@ -1,17 +1,28 @@
 import { useParams } from 'react-router-dom';
-import { Category, Data, Task } from '../../consts/Data';
+import { Category } from '../../consts/Data';
 import styles from './TaskDetailsPage.module.css';
 import BadgeMoney from '../../components/BadgeMoney/BadgeMoney';
 import { MoneyVariants } from '../../consts/MoneyVariants';
 import StepsTask from '../../components/StepTask/StepTask';
 import FlashMobDescription from '../../components/custom-input/Text';
 import BackButton from '../../components/BackButton/BackButton';
+import { Task } from '../../util/Task';
+import { getTask } from '../../api/api.task';
+import { useEffect, useState } from 'react';
 
 const TaskDetailsPage = () => {
     const params = useParams();
-    const task: Task | undefined = Data.find(
-        (task) => task.id.toString() === params.id
-    );
+    const [task, setTask] = useState<Task | undefined>();
+    useEffect(() => {
+        const fetchData = async () => {
+            if (params.id) {
+                const response = await getTask(params.id);
+                setTask(response);
+            }
+        };
+        fetchData();
+    }, [params]);
+
     return (
         <main>
             {task && (

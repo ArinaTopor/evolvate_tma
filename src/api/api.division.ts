@@ -6,7 +6,7 @@ export type Division = {
 };
 export const getDivisions = async (): Promise<Division[]> => {
     try {
-        const response = await api.get<Division[]>('profile/division');
+        const response = await api.get<Division[]>('/profile/division');
         return response.data;
     } catch (error) {
         console.error(error);

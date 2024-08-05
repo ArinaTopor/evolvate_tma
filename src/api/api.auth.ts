@@ -1,6 +1,5 @@
 import api from './api';
-const REGISTER_URL = '/auth/registration';
-const LOGIN_URL = '/auth/login';
+
 export type RegData = {
     username: string;
     password: string;
@@ -21,6 +20,7 @@ export type AuthData = {
 export type AuthResponse = {
     accessToken: string;
     refreshToken: string;
+    user_id: number;
     username: string;
     email: string;
     last_name: string;
@@ -35,8 +35,8 @@ export type CustomError = {
 };
 export const signUp = async (regData: RegData) => {
     try {
-        const response = await api.post(REGISTER_URL, regData);
-        return response.data; // Возвращаем данные успешного ответа
+        const response = await api.post('/auth/registration', regData);
+        return response.data;
     } catch (error) {
         return { error: 'Что-то пошло не так. Попробуйте позже.' };
     }
@@ -45,9 +45,16 @@ export const signIn = async (
     authData: AuthData
 ): Promise<AuthResponse | null> => {
     try {
-        const response = await api.post<AuthResponse>(LOGIN_URL, authData);
+        const response = await api.post<AuthResponse>('/auth/login', authData);
+        console.log(response);
         localStorage.setItem('accessToken', response.data.accessToken);
         localStorage.setItem('refreshToken', response.data.refreshToken);
+        localStorage.setItem('user_id', response.data.user_id.toString());
+        localStorage.setItem(
+            'coins_count',
+            response.data.coins_count.toString()
+        );
+
         return response.data;
     } catch (error) {
         console.log(error);

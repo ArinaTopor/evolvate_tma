@@ -41,8 +41,6 @@ a:hover {
 body {
     margin: 0;
     place-items: center;
-    min-width: 320px;
-    max-width: 390px;
     min-height: 100vh;
 }
 

@@ -1,37 +1,18 @@
+import { TagCount, Task, TaskTag } from '../util/Task';
 import api from './api';
-
-export type TaskTag = {
-    id: number;
-    name: string;
-    image: string;
-};
-
-export type TaskCompleted = {
-    id: number;
-    image?: string;
-    video?: string;
-    message?: string;
-    status: number;
-    task_id: number;
-};
-export interface Task {
-    id: number;
-    type_id: number;
-    tag_id: number;
-    is_solo: number;
-    name: string;
-    description: string;
-    status: number;
-    score: number;
-    tag: TaskTag;
-}
-
-const TASKS_URL = '/tasks';
-const ALL_TAGS_URL = '/tasks/tag';
 
 export const getAllTags = async (): Promise<TaskTag[]> => {
     try {
-        const response = await api.get<TaskTag[]>(ALL_TAGS_URL);
+        const response = await api.get<TaskTag[]>('/tasks/tags');
+        return response.data;
+    } catch (error) {
+        console.log(error);
+        throw error;
+    }
+};
+export const getCountTagTasks = async (): Promise<TagCount[]> => {
+    try {
+        const response = await api.get<TagCount[]>('/tasks/tagsCount');
         return response.data;
     } catch (error) {
         console.log(error);
@@ -39,19 +20,30 @@ export const getAllTags = async (): Promise<TaskTag[]> => {
     }
 };
 
-export const getAllTasks = async () => {
+export const getAllTasks = async (): Promise<Task[]> => {
     try {
-        const response = await api.get<Task[]>(TASKS_URL);
-        return response;
+        const response = await api.get<Task[]>('/tasks');
+        return response.data;
     } catch (error) {
         console.log(error);
+        throw error;
     }
 };
 
-export const completeTask = async (task: TaskCompleted) => {
+export const getTask = async (id: string): Promise<Task> => {
     try {
-        const response = await api.post(TASKS_URL, task);
-        return response;
+        const response = await api.get<Task>(`/tasks/${id}`);
+        return response.data;
+    } catch (error) {
+        console.log(error);
+        throw error;
+    }
+};
+
+export const completeTask = async (data: FormData) => {
+    try {
+        const response = await api.post('/user/userTask', data);
+        return response.status;
     } catch (error) {
         console.log(error);
     }

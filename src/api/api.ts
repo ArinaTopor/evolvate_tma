@@ -1,9 +1,6 @@
 import axios from 'axios';
-import { useContext } from 'react';
-import AuthContext from '../util/AuthContext';
-
 const api = axios.create({
-    baseURL: 'http://localhost:5000/',
+    baseURL: import.meta.env.VITE_APP_BASE_URL,
 });
 
 api.interceptors.request.use(
@@ -24,7 +21,6 @@ api.interceptors.response.use(
         return response;
     },
     async (error) => {
-        const { setAuth } = useContext(AuthContext);
         const originalRequest = error.config;
 
         if (error.response.status === 401 && !originalRequest._isRetry) {
@@ -39,9 +35,7 @@ api.interceptors.response.use(
                 originalRequest.headers.Authorization = `Bearer ${response.data.accessToken}`;
                 return api(originalRequest);
             } catch (err) {
-                setAuth(false);
-                localStorage.removeItem('accessToken');
-                localStorage.removeItem('refreshToken');
+                localStorage.clear();
                 return Promise.reject(err);
             }
         }

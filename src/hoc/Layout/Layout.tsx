@@ -2,15 +2,15 @@ import AccountCard from '../../components/AccountCard/AccountCard';
 import { Navigate, Outlet, useLocation } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import styles from './Layout.module.css';
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import qr from '../../assets/qr_bot.jpg';
-import AuthContext from '../../util/AuthContext';
+import { useAuth } from '../../context/UserAuth';
 
 const Layout = () => {
     const [isPhone, setIsPhone] = useState(true);
-    const { isAuthenticated } = useContext(AuthContext);
-    console.log(isAuthenticated);
+    const { isLoggedIn } = useAuth();
     const location = useLocation();
+
     useEffect(() => {
         if (
             /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
@@ -31,7 +31,7 @@ const Layout = () => {
         );
     }
 
-    return isAuthenticated ? (
+    return isLoggedIn() ? (
         <main className={styles.bg}>
             <Header />
             <div
@@ -46,7 +46,7 @@ const Layout = () => {
             </div>
         </main>
     ) : (
-        <Navigate to='/signIn' state={{ from: location }} replace />
+        <Navigate to='/hello' state={{ from: location }} replace />
     );
 };
 export default Layout;

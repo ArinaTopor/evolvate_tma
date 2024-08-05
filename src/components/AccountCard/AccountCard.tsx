@@ -12,7 +12,7 @@ const AccountCard = () => {
     return (
         <div className={styles.container}>
             <div className={styles.photo_wrapper}>
-                <img src={avatar}></img>
+                <img src={user?.photo_url ?? avatar} alt='avatar'></img>
             </div>
             <div className={styles.info}>
                 <p>
@@ -21,7 +21,7 @@ const AccountCard = () => {
                 <div>
                     <div>
                         <img src={money}></img>
-                        <p>1556</p>
+                        <p>{localStorage.getItem('coins_count')}</p>
                     </div>
                     <div style={{ marginLeft: '12px', cursor: 'pointer' }}>
                         <img src={cart} onClick={() => navigate('/cart')}></img>

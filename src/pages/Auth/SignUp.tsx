@@ -7,7 +7,7 @@ import {
     required,
 } from '../../hooks/useValidation';
 import styles from './Auth.module.css';
-import { getDivisions } from '../../api/Division';
+import { getDivisions } from '../../api/api.division';
 import { useEffect, useState } from 'react';
 import { OptionT } from '../../util/OptionType';
 import { transformDataForSelect } from '../../helpFunc/transformToSelect';

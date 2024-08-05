@@ -11,6 +11,7 @@
     display: flex;
     align-items: start;
     justify-content: space-between;
+    align-items: center;
     font-family: 'Manrope', sans-serif;
 }
 .card_header span {

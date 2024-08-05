@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { Task, Type } from '../../consts/Data';
+import { Type } from '../../consts/Data';
 import Upload from '../custom-input/Upload';
 import CollaboratorsInput from '../custom-input/CollaboratorsInput/CollaboratorsInput';
 import styles from './StepTask.module.css';
 import rollUp from '../../assets/rollUp.svg';
+import { Task } from '../../util/Task';
+import { completeTask } from '../../api/api.task';
 
 const StepsTask = ({ task }: { task: Task }) => {
     const [visibleUpload, setVisibleUpload] = useState<boolean>(false);
@@ -11,10 +13,32 @@ const StepsTask = ({ task }: { task: Task }) => {
     const [collabList, setCollabList] = useState<string[]>([]);
     const [fileList, setFileList] = useState<File[]>([]);
 
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        console.log(collabList);
-        console.log(fileList);
+        const formData = new FormData(event.currentTarget);
+        const message = formData.get('text') as string;
+        const formDataComplete = new FormData();
+        formDataComplete.append(
+            'user_id',
+            localStorage.getItem('user_id') ?? ''
+        );
+        // formDataComplete.append('image', new Blob(fileList[0]))
+        // formDataComplete.append('video', new Blob(fileList[0]))
+        fileList.forEach((file) => {
+            if (file.type.startsWith('image/')) {
+                formDataComplete.append('image', file);
+            } else if (file.type.startsWith('video/')) {
+                formDataComplete.append('video', file);
+            }
+        });
+        formDataComplete.append('message', message);
+        formDataComplete.append('task_id', task.id.toString());
+        formDataComplete.append('emails', JSON.stringify(collabList));
+        formDataComplete.append('status', '2');
+        const response = await completeTask(formDataComplete);
+        if (response) {
+            console.log(formData);
+        }
         setCollabList([]);
         setFileList([]);
     };

@@ -3,13 +3,33 @@ import BackButton from '../../components/BackButton/BackButton';
 import CartItem from '../../components/CartItem/CartItem';
 import { useCart } from '../../util/CartContext';
 import styles from './Cart.module.css';
+import { CartType } from '../../util/Product';
+import { buyProducts } from '../../api/api.product';
 
 const Cart = () => {
-    const { addedItems } = useCart();
+    const { addedItems, setAddedItems, totalPrice } = useCart();
     const [showNotification, setShowNotification] = useState<boolean>(false);
-    const handleSubmit = () => {
-        console.log('Заказ оформлен:)');
-        setShowNotification(true);
+    const [cartItems, setCartItems] = useState<CartType[]>([]);
+    const [error, setError] = useState<boolean>(false);
+    const addToCart = () => {
+        const newItems: CartType[] = addedItems.map((product) => ({
+            user_id: Number(localStorage.getItem('user_id')),
+            product_id: product.id,
+            variant_id: product.variant_id,
+        }));
+        setCartItems([...cartItems, ...newItems]);
+    };
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        addToCart();
+        setError(false);
+        const response = await buyProducts(cartItems);
+        if (response === 'success!') {
+            setShowNotification(true);
+            setAddedItems([]);
+        } else {
+            setError(true);
+        }
     };
     return (
         <div className={styles.cart_container}>
@@ -22,12 +42,35 @@ const Cart = () => {
                             <CartItem key={item.id} product={item}></CartItem>
                         ))}
                     </div>
-                    <form>
-                        <button onClick={handleSubmit}>Отправить</button>
+                    {totalPrice >
+                        Number(localStorage.getItem('coins_count')) && (
+                        <p className={styles.cart_balance}>
+                            Вам не хватает:{' '}
+                            {totalPrice -
+                                Number(
+                                    localStorage.getItem('coins_count')
+                                )}{' '}
+                            монет
+                        </p>
+                    )}
+                    <form onSubmit={handleSubmit}>
+                        <button
+                            className={styles.cart_btn}
+                            type='submit'
+                            disabled={
+                                totalPrice >
+                                    Number(
+                                        localStorage.getItem('coins_count')
+                                    ) || error
+                            }
+                        >
+                            {error ? 'Что-то пошло не так.' : 'Отправить'}
+                        </button>
                     </form>
                 </div>
             ) : (
-                showNotification && (
+                showNotification &&
+                !error && (
                     <div className={styles.cart_notification}>
                         <p>
                             Ваш заказ принят. <br /> С вами свяжется менеджер

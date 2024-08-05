@@ -3,11 +3,11 @@ import Dialog from '../Dialog/Dialog';
 import money from '../../assets/yellowMoney.svg';
 import FlashMobDescription from '../custom-input/Text';
 import { useCart } from '../../util/CartContext';
-import { useEffect, useState } from 'react';
 import Select from '../custom-input/Select';
 import { Product } from '../../util/Product';
 import { transformDataForSelect } from '../../helpFunc/transformToSelect';
-import { getImage } from '../../helpFunc/getImage';
+import useImageUrl from '../../hooks/useImageUrl';
+import { useState } from 'react';
 const ModalInfo = ({
     product,
     open,
@@ -26,18 +26,7 @@ const ModalInfo = ({
         (item) => item.value
     );
 
-    const [imageURL, setImageURL] = useState('');
-
-    useEffect(() => {
-        const fetchImage = async () => {
-            const url = await getImage(product.image[0].image);
-            if (url) {
-                setImageURL(url);
-            }
-        };
-
-        fetchImage();
-    }, [product.image[0].image]);
+    const { imageURL } = useImageUrl(product.image[0].image);
 
     const { onAdd } = useCart();
     const selectedVariant =
@@ -46,15 +35,7 @@ const ModalInfo = ({
         null;
     const onAddHandler = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        const formData = new FormData(e.currentTarget);
-        const variant = formData.get('variant') as string;
-
-        console.log({
-            product,
-            variant,
-        });
-
-        onAdd(product);
+        onAdd(product, selectedVariant.title, Number(selectedVariant.value));
         onOpen(false);
     };
     return (

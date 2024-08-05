@@ -1,23 +1,13 @@
 import { MoneyVariants } from '../../consts/MoneyVariants';
 import BadgeMoney from '../BadgeMoney/BadgeMoney';
 import styles from './ProductCard.module.css';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import ModalInfo from '../ModalInfoProduct/ModalInfo';
 import { Product } from '../../util/Product';
-import { getImage } from '../../helpFunc/getImage';
+import useImageUrl from '../../hooks/useImageUrl';
 const ProductCard = ({ product }: { product: Product }) => {
     const [open, onOpen] = useState(false);
-    const [imageURL, setImageURL] = useState('');
-    useEffect(() => {
-        const fetchImage = async () => {
-            const url = await getImage(product.image[0].image);
-            if (url) {
-                setImageURL(url);
-            }
-        };
-
-        fetchImage();
-    }, [product.image]);
+    const { imageURL } = useImageUrl(product.image[0].image);
     return (
         <>
             <div className={styles.product_container}>

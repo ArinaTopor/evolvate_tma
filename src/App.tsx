@@ -1,27 +1,20 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import SignUp from './pages/Auth/SignUp';
-import MainPage from './pages/ChellengePage/MainPage';
+import MainPage from './pages/ChallengePage/MainPage';
 import SignIn from './pages/Auth/SignIn';
 import TaskPage from './pages/TaskPage/TaskPage';
 import Shop from './pages/Shop/Shop';
 import TaskDetailsPage from './pages/TaskDetails/TaskDetailsPage';
-import Hello from './components/Hello';
-import { CartProvider } from './util/CartContext';
-import Layout from './pages/Layout/Layout';
+import Hello from './components/Hello/Hello';
+import { CartProvider } from './context/CartContext';
+import Layout from './hoc/Layout/Layout';
 import Cart from './pages/Cart/Cart';
-import AuthContext from './util/AuthContext';
-import { useState } from 'react';
+import { UserProvider } from './context/UserAuth';
 
 function App() {
-    const [isAuthenticated, setAuth] = useState<boolean>(false);
     return (
-        <AuthContext.Provider
-            value={{
-                isAuthenticated,
-                setAuth,
-            }}
-        >
+        <UserProvider>
             <CartProvider>
                 <BrowserRouter>
                     <Routes>
@@ -45,7 +38,7 @@ function App() {
                     </Routes>
                 </BrowserRouter>
             </CartProvider>
-        </AuthContext.Provider>
+        </UserProvider>
     );
 }
 

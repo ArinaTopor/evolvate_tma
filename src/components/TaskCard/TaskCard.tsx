@@ -4,8 +4,9 @@ import styles from './TaskCard.module.css';
 import camera from '../../assets/camera.svg';
 import text from '../../assets/write.svg';
 import video from '../../assets/video.svg';
-import { Category, Task, Type } from '../../consts/Data';
+import { Category, Type } from '../../consts/Data';
 import { useNavigate } from 'react-router-dom';
+import { Task } from '../../util/Task';
 
 const TaskCard = ({ task }: { task: Task }) => {
     const navigate = useNavigate();

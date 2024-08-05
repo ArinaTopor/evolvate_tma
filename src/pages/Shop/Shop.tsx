@@ -11,7 +11,6 @@ const Shop = () => {
             try {
                 const data = await getAllProducts();
                 setProducts(data);
-                console.log(data);
             } catch (error) {
                 console.error('Error fetching user profile:', error);
             }
