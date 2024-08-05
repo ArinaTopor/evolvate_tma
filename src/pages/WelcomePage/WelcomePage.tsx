@@ -1,15 +1,18 @@
-import { useEffect, useState } from 'react';
-import Mascot from '../assets/Mascot.svg';
-import bubble from '../assets/wolke.svg';
-import styles from './Hello.module.css';
-import Header from '../Header/Header';
-const Hello = () => {
-    const messages = [
-        'Приветствую, вас в нашем терминале Evolvate',
-        'Здесь вы увидите пример механики заданий с элементами геймификации',
-        'Нужно будет решать разные задачи и получать монетки',
-        'На монеты вы можете купить корпоративный мерч',
-    ];
+import { useEffect, useMemo, useState } from 'react';
+import Mascot from '../../assets/Mascot.svg';
+import bubble from '../../assets/wolke.svg';
+import styles from './WelcomePage.module.css';
+import Header from '../../components/Header/Header';
+const WelcomePage = () => {
+    const messages = useMemo(
+        () => [
+            'Приветствую, вас в нашем терминале Evolvate',
+            'Здесь вы увидите пример механики заданий с элементами геймификации',
+            'Нужно будет решать разные задачи и получать монетки',
+            'На монеты вы можете купить корпоративный мерч',
+        ],
+        []
+    );
 
     const [currentIndex, setCurrentIndex] = useState(0);
     const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
@@ -37,8 +40,8 @@ const Hello = () => {
                     );
 
                     setAnimationClass(styles.fadeIn);
-                }, 1500);
-            }, 2000);
+                }, 1000);
+            }, 3500);
 
             return () => clearInterval(interval);
         }
@@ -47,13 +50,13 @@ const Hello = () => {
     return (
         <div className={styles.main}>
             <Header />
-            <div>
+            <div className={styles.main__container}>
                 <div
                     className={`${styles.bubble} ${
                         showBibbles[0].show ? styles.animated : ''
                     }`}
                     style={{
-                        opacity: showBibbles[0].show ? '1' : '0',
+                        display: showBibbles[0].show ? 'flex' : 'none',
                         animationDelay: `${0 * 0.5}s`,
                     }}
                 >
@@ -64,7 +67,7 @@ const Hello = () => {
                         showBibbles[1].show ? styles.animated : ''
                     }`}
                     style={{
-                        opacity: showBibbles[1].show ? '1' : '0',
+                        display: showBibbles[1].show ? 'flex' : 'none',
                     }}
                 >
                     Здесь вы увидите пример механики заданий с элементами
@@ -75,13 +78,13 @@ const Hello = () => {
                         showBibbles[2].show ? styles.animated : ''
                     }`}
                     style={{
-                        opacity: showBibbles[2].show ? '1' : '0',
+                        display: showBibbles[2].show ? 'flex' : 'none',
                     }}
                 >
                     Нужно будет решать разные задачи и получать монетки
                 </div>
                 <div className={styles.container}>
-                    <img src={Mascot}></img>
+                    <img className={styles.mascot} src={Mascot}></img>
                     <div className={styles.chat}>
                         <img src={bubble} />
                         <p className={`${styles.chatBubble} ${animationClass}`}>
@@ -93,4 +96,4 @@ const Hello = () => {
         </div>
     );
 };
-export default Hello;
+export default WelcomePage;

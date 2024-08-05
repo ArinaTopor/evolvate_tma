@@ -2,7 +2,7 @@ import money from '../../assets/yellowMoney.svg';
 import avatar from '../../assets/defaulPhoto.png';
 import styles from './AccountCard.module.css';
 import cart from '../../assets/cart.svg';
-import { useCart } from '../../util/CartContext';
+import { useCart } from '../../context/CartContext';
 import { useNavigate } from 'react-router-dom';
 import { useTelegram } from '../../hooks/useTelegram';
 const AccountCard = () => {

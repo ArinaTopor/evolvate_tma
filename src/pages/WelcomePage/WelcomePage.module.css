@@ -1,5 +1,5 @@
 .main {
-    background-image: url('../assets/bg.png');
+    background-image: url('../../assets/bg.png');
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
@@ -7,68 +7,80 @@
     padding-right: 16px;
     padding-top: 16px;
 }
+.main__container {
+    bottom: 86px;
+    position: absolute;
+}
 .container {
-    display: flex;
-    align-items: center;
-    margin-bottom: 40px;
+    position: relative;
+    height: 150px;
 }
 
 .chat {
-    position: relative;
+    position: absolute;
     text-align: center;
     width: 200px;
     height: 50px;
+    top: 20px;
+    left: 110px;
+}
+.mascot {
+    position: absolute;
+    left: 0;
 }
 
 .chatBubble {
     position: absolute;
-    display: flex;
     top: 50%;
     left: 61%;
     transform: translate(-50%, -50%);
-    background-color: #fff;
-    border-radius: 10px;
-    transition: transform 1s, opacity 1s;
-    width: 185px;
+    transition: display 1s;
+    width: 180px;
+    padding: 0px 8px;
     height: 48px;
-    align-items: center;
+    background-color: #fff;
     border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
     text-align: start;
-    font-size: 0.9rem;
+    font-size: 0.83em;
     line-height: 12px;
 }
 .bubble:nth-child(1) {
-    margin-top: 100px;
     margin-left: 82px;
-    margin-bottom: 18px;
 }
 .bubble:nth-child(2) {
     margin-left: 138px;
 }
 .bubble:nth-child(3) {
-    margin-top: 18px;
     margin-left: 117px;
+    margin-bottom: 0;
 }
 .bubble {
+    position: relative;
     display: flex;
     align-items: center;
     text-align: start;
     background-color: #fff;
     border-radius: 20px;
-    padding: 7px 15px;
+    padding: 7px 14px;
     width: 190px;
     height: 50px;
-    font-size: 0.9rem;
+    font-size: 0.83em;
     line-height: 12px;
+    margin-bottom: 16px;
 }
-.fadeIn {
-    opacity: 1;
-    transform: translate(-50%, -50%);
-}
-
 .fadeOut {
     opacity: 0;
-    transform: translate(-50%, -90%);
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+
+.fadeIn {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 1s ease-in-out, visibility 1s ease-in-out;
 }
 
 .animated {
@@ -78,11 +90,11 @@
 
 @keyframes slide-up {
     0% {
-        transform: translateY(100%);
+        display: none;
         opacity: 0;
     }
     100% {
-        transform: translateY(50%);
         opacity: 1;
+        display: flex;
     }
 }

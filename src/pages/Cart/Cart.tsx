@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import BackButton from '../../components/BackButton/BackButton';
 import CartItem from '../../components/CartItem/CartItem';
-import { useCart } from '../../util/CartContext';
+import { useCart } from '../../context/CartContext';
 import styles from './Cart.module.css';
 import { CartType } from '../../util/Product';
 import { buyProducts } from '../../api/api.product';

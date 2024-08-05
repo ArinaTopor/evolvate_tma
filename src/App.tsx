@@ -6,7 +6,7 @@ import SignIn from './pages/Auth/SignIn';
 import TaskPage from './pages/TaskPage/TaskPage';
 import Shop from './pages/Shop/Shop';
 import TaskDetailsPage from './pages/TaskDetails/TaskDetailsPage';
-import Hello from './components/Hello/Hello';
+import WelcomePage from './pages/WelcomePage/WelcomePage';
 import { CartProvider } from './context/CartContext';
 import Layout from './hoc/Layout/Layout';
 import Cart from './pages/Cart/Cart';
@@ -20,7 +20,7 @@ function App() {
                     <Routes>
                         <Route path='/signUp' element={<SignUp />} />
                         <Route path='/signIn' element={<SignIn />} />
-                        <Route path='/hello' element={<Hello />} />
+                        <Route path='/welcome' element={<WelcomePage />} />
 
                         <Route element={<Layout />}>
                             <Route path='/' element={<MainPage />} />

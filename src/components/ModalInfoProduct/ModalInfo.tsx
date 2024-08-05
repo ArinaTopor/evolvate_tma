@@ -2,10 +2,10 @@ import styles from './ModalInfo.module.css';
 import Dialog from '../Dialog/Dialog';
 import money from '../../assets/yellowMoney.svg';
 import FlashMobDescription from '../custom-input/Text';
-import { useCart } from '../../util/CartContext';
+import { useCart } from '../../context/CartContext';
 import Select from '../custom-input/Select';
 import { Product } from '../../util/Product';
-import { transformDataForSelect } from '../../helpFunc/transformToSelect';
+import { transformDataForSelect } from '../../util/transformToSelect';
 import useImageUrl from '../../hooks/useImageUrl';
 import { useState } from 'react';
 const ModalInfo = ({

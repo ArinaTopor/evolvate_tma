@@ -10,7 +10,7 @@ import styles from './Auth.module.css';
 import { getDivisions } from '../../api/api.division';
 import { useEffect, useState } from 'react';
 import { OptionT } from '../../util/OptionType';
-import { transformDataForSelect } from '../../helpFunc/transformToSelect';
+import { transformDataForSelect } from '../../util/transformToSelect';
 import Select from '../../components/custom-input/Select';
 import { useTelegram } from '../../hooks/useTelegram';
 import { RegData, signUp } from '../../api/api.auth';

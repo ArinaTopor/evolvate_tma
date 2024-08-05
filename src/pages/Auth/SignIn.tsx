@@ -3,17 +3,15 @@ import mascot from '../../assets/Mascot.svg';
 import message from '../../assets/authMess.svg';
 import { emailValidator, required } from '../../hooks/useValidation';
 import styles from './Auth.module.css';
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 import { AuthData } from '../../api/api.auth';
 import Header from '../../components/Header/Header';
-import AuthContext from '../../util/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/UserAuth';
 const SignIn = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [myError, setError] = useState<string | null>(null);
-    const { setAuth } = useContext(AuthContext);
     const { login, error } = useAuth();
     const navigate = useNavigate();
     const logIn = async (e: React.FormEvent) => {
@@ -27,7 +25,6 @@ const SignIn = () => {
         if (error) {
             setError('Неверный email или пароль. Попробуйте снова.');
         } else {
-            setAuth(true);
             navigate('/');
         }
     };
