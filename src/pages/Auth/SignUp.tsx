@@ -15,6 +15,7 @@ import Select from '../../components/custom-input/Select';
 import { useTelegram } from '../../hooks/useTelegram';
 import { RegData, signUp } from '../../api/api.auth';
 import { useNavigate } from 'react-router-dom';
+import Header from '../../components/Header/Header';
 const SignUp = () => {
     const [options, setOptions] = useState<OptionT[] | undefined>();
     const { user } = useTelegram();
@@ -79,6 +80,7 @@ const SignUp = () => {
     };
     return (
         <main className={styles.bg}>
+            <Header></Header>
             <div className={styles.form_wrapper}>
                 <h1>Регистрация</h1>
                 <form onSubmit={handleSignUp}>
@@ -132,9 +134,13 @@ const SignUp = () => {
                             password.length === 0
                         }
                     >
-                        Отправить
+                        отправить
                     </button>
                 </form>
+                <div className={styles.link}>
+                    <span>Уже есть аккаунт?</span>
+                    <a href='/signIn'>Войти</a>
+                </div>
                 <div className={styles.mascot_container}>
                     <img src={mascot}></img>
                     <img src={message}></img>

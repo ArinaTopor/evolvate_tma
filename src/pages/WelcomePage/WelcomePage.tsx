@@ -13,7 +13,6 @@ const WelcomePage = () => {
         ],
         []
     );
-
     const [currentIndex, setCurrentIndex] = useState(0);
     const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
     const [animationClass, setAnimationClass] = useState('');
@@ -43,7 +42,9 @@ const WelcomePage = () => {
                 }, 1000);
             }, 3500);
 
-            return () => clearInterval(interval);
+            return () => {
+                clearInterval(interval);
+            };
         }
     }, [currentIndex, messages, showBibbles]);
 
@@ -93,6 +94,9 @@ const WelcomePage = () => {
                     </div>
                 </div>
             </div>
+            <a className={styles.link} href='/signIn'>
+                Перейти
+            </a>
         </div>
     );
 };

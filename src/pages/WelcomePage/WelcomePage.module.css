@@ -87,7 +87,18 @@
     animation-delay: 2s;
     animation: slide-up 1s ease forwards;
 }
-
+.link {
+    position: absolute;
+    opacity: 0.8;
+    color: var(--main-blue);
+    bottom: 68px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.link::after {
+    content: '>';
+    color: var(--main-blue);
+}
 @keyframes slide-up {
     0% {
         display: none;

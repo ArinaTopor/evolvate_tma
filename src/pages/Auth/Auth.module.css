@@ -19,7 +19,7 @@
     cursor: pointer;
     transition: background-color 0.15s ease-in-out;
     margin-top: 14px;
-    margin-bottom: 48px;
+    margin-bottom: 8px;
 }
 .submit_btn:hover {
     background-color: var(--violet);
@@ -34,7 +34,7 @@
 }
 
 .form_wrapper h1 {
-    margin: 72px 0 36px 0;
+    margin: 64px 0 36px 0;
 }
 .form_wrapper form {
     display: flex;
@@ -49,4 +49,12 @@
 .form_error {
     color: var(--red);
     font-weight: 500;
+}
+.link {
+    margin-bottom: 14px;
+}
+.link a {
+    font-weight: 700;
+    color: var(--light-violet);
+    margin-left: 4px;
 }

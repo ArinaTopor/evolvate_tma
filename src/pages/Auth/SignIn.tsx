@@ -54,9 +54,13 @@ const SignIn = () => {
                         className={styles.submit_btn}
                         disabled={email.length === 0 || password.length === 0}
                     >
-                        отправить
+                        войти
                     </button>
                 </form>
+                <div className={styles.link}>
+                    <span>Еще нет аккаунта?</span>
+                    <a href='/signUp'>Зарегистрироваться</a>
+                </div>
                 <div className={styles.mascot_container}>
                     <img src={mascot}></img>
                     <img src={message}></img>
