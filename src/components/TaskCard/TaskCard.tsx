@@ -12,11 +12,19 @@ const TaskCard = ({ task }: { task: Task }) => {
     const navigate = useNavigate();
     const type = Type[task.type_id];
     const handleClick = () => {
-        navigate(`/tasks/${Category[task.tag_id]}/${task.id}`);
+        if (task.status !== 3)
+            navigate(`/tasks/${Category[task.tag_id]}/${task.id}`);
     };
 
     return (
-        <div className={styles.taskcard_container} onClick={handleClick}>
+        <div
+            className={
+                task.status === 3
+                    ? `${styles.taskcard_container} ${styles.completed}`
+                    : styles.taskcard_container
+            }
+            onClick={handleClick}
+        >
             <div>
                 <img
                     src={

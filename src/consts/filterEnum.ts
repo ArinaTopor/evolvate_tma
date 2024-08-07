@@ -1,5 +1,5 @@
 export enum FilterData {
-    'all' = 1,
-    'uncomplete' = 2,
+    'all' = 0,
+    'uncomplete' = 1,
     'complete' = 3,
 }

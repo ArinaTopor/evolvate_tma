@@ -35,7 +35,11 @@ const TaskPage = () => {
         ) ?? 'all';
 
     const handleFilter = (status: number) => {
-        setFilteredData(taskData.filter((task) => task.status === status));
+        if (status === 0) {
+            setFilteredData(taskData);
+        } else {
+            setFilteredData(taskData.filter((task) => task.status === status));
+        }
         setActiveStatus(status);
     };
     return (
@@ -71,7 +75,8 @@ const TaskPage = () => {
                   ))
                 : filteredData.map(
                       (task) =>
-                          task.tag_id.toString() === category && (
+                          task.tag_id.toString() === category &&
+                          task.status !== 2 && (
                               <TaskCard key={task.id} task={task} />
                           )
                   )}
