@@ -33,7 +33,9 @@ const StepsTask = ({ task }: { task: Task }) => {
         });
         formDataComplete.append('message', message);
         formDataComplete.append('task_id', task.id.toString());
-        formDataComplete.append('emails', JSON.stringify(collabList));
+        if (collabList.length > 0) {
+            formDataComplete.append('emails', JSON.stringify(collabList));
+        }
         formDataComplete.append('status', '2');
         const response = await completeTask(formDataComplete);
         if (response) {

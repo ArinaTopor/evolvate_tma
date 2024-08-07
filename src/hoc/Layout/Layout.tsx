@@ -46,7 +46,7 @@ const Layout = () => {
             </div>
         </main>
     ) : (
-        <Navigate to='/hello' state={{ from: location }} replace />
+        <Navigate to='/welcome' state={{ from: location }} replace />
     );
 };
 export default Layout;
