@@ -1,6 +1,6 @@
 import { MouseEventHandler, useEffect, useRef, useState } from 'react';
-import arrowDown from '../../assets/arrowDown.svg';
-import { OptionT } from '../../util/OptionType';
+import arrowDown from '../../../assets/arrowDown.svg';
+import { OptionT } from '../../../util/OptionType';
 import Option from './Option';
 import styles from './Select.module.css';
 type SelectProps = {

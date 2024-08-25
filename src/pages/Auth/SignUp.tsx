@@ -1,4 +1,4 @@
-import CustomInput from '../../components/custom-input/CustomInput';
+import CustomInput from '../../components/custom-input/CustomInput/CustomInput';
 import mascot from '../../assets/Mascot.svg';
 import message from '../../assets/signUpMessage.svg';
 import {
@@ -11,7 +11,7 @@ import { getDivisions } from '../../api/api.division';
 import { useEffect, useState } from 'react';
 import { OptionT } from '../../util/OptionType';
 import { transformDataForSelect } from '../../util/transformToSelect';
-import Select from '../../components/custom-input/Select';
+import Select from '../../components/custom-input/Select/Select';
 import { useTelegram } from '../../hooks/useTelegram';
 import { RegData, signUp } from '../../api/api.auth';
 import { useNavigate } from 'react-router-dom';

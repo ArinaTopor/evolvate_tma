@@ -17,6 +17,7 @@ const AccountCard = () => {
             <div className={styles.info}>
                 <p>
                     {user?.first_name} {user?.last_name}
+                    Василий Яруллин
                 </p>
                 <div>
                     <div>

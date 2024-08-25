@@ -1,6 +1,6 @@
 import React from 'react';
-import { useInput } from '../../hooks/useInput';
-import { Validator } from '../../hooks/useValidation';
+import { useInput } from '../../../hooks/useInput';
+import { Validator } from '../../../hooks/useValidation';
 import styles from './CustomInput.module.css';
 const CustomInput = ({
     placeholder,

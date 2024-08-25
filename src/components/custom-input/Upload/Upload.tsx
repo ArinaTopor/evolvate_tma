@@ -1,6 +1,6 @@
 import styles from './Upload.module.css';
-import upload from '../../assets/upload.svg';
-import remove from '../../assets/close.svg';
+import upload from '../../../assets/upload.svg';
+import remove from '../../../assets/close.svg';
 const Upload = ({
     fileList,
     setFileList,

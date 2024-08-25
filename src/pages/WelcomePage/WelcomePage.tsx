@@ -16,7 +16,7 @@ const WelcomePage = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [currentMessageIndex, setCurrentMessageIndex] = useState(0);
     const [animationClass, setAnimationClass] = useState('');
-    const [showBibbles, setShowBubbles] = useState([
+    const [showBubbles, setShowBubbles] = useState([
         { id: 0, show: false },
         { id: 1, show: false },
         { id: 2, show: false },
@@ -46,7 +46,7 @@ const WelcomePage = () => {
                 clearInterval(interval);
             };
         }
-    }, [currentIndex, messages, showBibbles]);
+    }, [currentIndex, messages, showBubbles]);
 
     return (
         <div className={styles.main}>
@@ -54,10 +54,10 @@ const WelcomePage = () => {
             <div className={styles.main__container}>
                 <div
                     className={`${styles.bubble} ${
-                        showBibbles[0].show ? styles.animated : ''
+                        showBubbles[0].show ? styles.animated : ''
                     }`}
                     style={{
-                        display: showBibbles[0].show ? 'flex' : 'none',
+                        display: showBubbles[0].show ? 'flex' : 'none',
                         animationDelay: `${0 * 0.5}s`,
                     }}
                 >
@@ -65,10 +65,10 @@ const WelcomePage = () => {
                 </div>
                 <div
                     className={`${styles.bubble} ${
-                        showBibbles[1].show ? styles.animated : ''
+                        showBubbles[1].show ? styles.animated : ''
                     }`}
                     style={{
-                        display: showBibbles[1].show ? 'flex' : 'none',
+                        display: showBubbles[1].show ? 'flex' : 'none',
                     }}
                 >
                     Здесь вы увидите пример механики заданий с элементами
@@ -76,10 +76,10 @@ const WelcomePage = () => {
                 </div>
                 <div
                     className={`${styles.bubble} ${
-                        showBibbles[2].show ? styles.animated : ''
+                        showBubbles[2].show ? styles.animated : ''
                     }`}
                     style={{
-                        display: showBibbles[2].show ? 'flex' : 'none',
+                        display: showBubbles[2].show ? 'flex' : 'none',
                     }}
                 >
                     Нужно будет решать разные задачи и получать монетки

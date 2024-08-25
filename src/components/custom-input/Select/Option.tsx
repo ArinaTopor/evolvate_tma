@@ -1,6 +1,6 @@
 import { MouseEventHandler, useEffect, useRef } from 'react';
-import { OptionProps } from '../../util/OptionType';
-import { OptionT } from '../../util/OptionType';
+import { OptionProps } from '../../../util/OptionType';
+import { OptionT } from '../../../util/OptionType';
 import styles from './Option.module.css';
 const Option = (props: OptionProps) => {
     const {

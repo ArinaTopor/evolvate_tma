@@ -1,4 +1,4 @@
-import CustomInput from '../../components/custom-input/CustomInput';
+import CustomInput from '../../components/custom-input/CustomInput/CustomInput';
 import mascot from '../../assets/Mascot.svg';
 import message from '../../assets/authMess.svg';
 import { emailValidator, required } from '../../hooks/useValidation';

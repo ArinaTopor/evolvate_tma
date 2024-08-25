@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Type } from '../../consts/Data';
-import Upload from '../custom-input/Upload';
+import Upload from '../custom-input/Upload/Upload';
 import CollaboratorsInput from '../custom-input/CollaboratorsInput/CollaboratorsInput';
 import styles from './StepTask.module.css';
 import rollUp from '../../assets/rollUp.svg';
@@ -22,8 +22,6 @@ const StepsTask = ({ task }: { task: Task }) => {
             'user_id',
             localStorage.getItem('user_id') ?? ''
         );
-        // formDataComplete.append('image', new Blob(fileList[0]))
-        // formDataComplete.append('video', new Blob(fileList[0]))
         fileList.forEach((file) => {
             if (file.type.startsWith('image/')) {
                 formDataComplete.append('image', file);
@@ -47,7 +45,7 @@ const StepsTask = ({ task }: { task: Task }) => {
     return (
         <>
             <form className={styles.form} onSubmit={handleSubmit}>
-                {!task.is_solo ? (
+                {task.is_solo === 2 ? (
                     <React.Fragment>
                         <div className={styles.step_container}>
                             <h4>Выберите соавторов</h4>

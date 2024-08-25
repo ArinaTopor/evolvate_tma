@@ -3,7 +3,7 @@ import Dialog from '../Dialog/Dialog';
 import money from '../../assets/yellowMoney.svg';
 import FlashMobDescription from '../custom-input/Text';
 import { useCart } from '../../context/CartContext';
-import Select from '../custom-input/Select';
+import Select from '../custom-input/Select/Select';
 import { Product } from '../../util/Product';
 import { transformDataForSelect } from '../../util/transformToSelect';
 import useImageUrl from '../../hooks/useImageUrl';
