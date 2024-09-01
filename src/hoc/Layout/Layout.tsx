@@ -19,7 +19,7 @@ const Layout = () => {
         ) {
             setIsPhone(true);
         } else {
-            setIsPhone(true);
+            setIsPhone(false);
         }
     }, []);
     if (!isPhone) {
