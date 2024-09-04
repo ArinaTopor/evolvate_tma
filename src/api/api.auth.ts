@@ -46,7 +46,6 @@ export const signIn = async (
 ): Promise<AuthResponse | null> => {
     try {
         const response = await api.post<AuthResponse>('/auth/login', authData);
-        console.log(response);
         localStorage.setItem('accessToken', response.data.accessToken);
         localStorage.setItem('refreshToken', response.data.refreshToken);
         localStorage.setItem('user_id', response.data.user_id.toString());

@@ -35,10 +35,7 @@ const StepsTask = ({ task }: { task: Task }) => {
             formDataComplete.append('emails', JSON.stringify(collabList));
         }
         formDataComplete.append('status', '2');
-        const response = await completeTask(formDataComplete);
-        if (response) {
-            console.log(formData);
-        }
+        completeTask(formDataComplete);
         setCollabList([]);
         setFileList([]);
     };
